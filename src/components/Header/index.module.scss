@@ -1,0 +1,23 @@
+@use "./../../styles/variables.scss" as *;
+
+.header {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2em;
+    margin-bottom: 1em;
+    align-items: center;
+}
+
+.navBar {
+    display: flex;;
+    gap: 1em;
+    
+    a {
+        text-decoration: none;
+        color: $main-text-color;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
