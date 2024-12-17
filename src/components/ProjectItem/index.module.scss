@@ -1,0 +1,10 @@
+.project {
+    text-align: left;
+    cursor: pointer;
+
+    &__img {
+        width: 500px;
+        height: 300px;
+        object-fit: cover;
+    }
+}

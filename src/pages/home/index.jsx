@@ -2,6 +2,7 @@ import Projects from "../../components/Projects"
 import Skills from "../../components/Skills"
 import m from "./index.module.scss"
 
+// potential bug : Skills component is refreshed when an another categories is selected in project section
 function Home() {
     return (
         <main className={m.main}>
