@@ -1,0 +1,12 @@
+.main {
+    text-align: center;
+}
+
+.skill {
+    margin: 4em 0;
+
+    &__para {
+        margin: 2em auto;
+        max-width: 1000px;
+    }
+}
