@@ -6,9 +6,9 @@ import "./styles/main.scss"
 function App() {
   return (
     <>
-      <Header />
-      <Home />
-      <Footer />
+        <Header />
+        <Home />
+        <Footer />
     </>
   )
 }
