@@ -1,8 +1,9 @@
 import Home from "./pages/home/index"
-import Header from "./components/Header"
-import Footer from "./components/Footer"
+import Header from "./layout/Header"
+import Footer from "./layout/Footer"
 import "./styles/main.scss"
 
+// add lazy load components ?
 function App() {
   return (
     <>
