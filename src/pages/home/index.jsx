@@ -7,7 +7,7 @@ function Home() {
     return (
         <main className={m.main}>
             {/* fast presentation section */}
-            <section className={m.presentation}>
+            <section>
                 <p>
                     fast presentation ....................
                 </p>
@@ -30,21 +30,17 @@ function Home() {
             {/* skill section */}
             <section className={m.skill} id="skill">
                 <h2>Compétences</h2>
-                    <ul className={m.skill__list}>
-                        <li>Frontend : Création d’interfaces utilisateur performantes et intuitives, avec une attention particulière à l’optimisation des performances et à un code propre et lisible.</li>
-                        <li>Backend : Conception d’API et gestion de bases de données, avec l’ambition d’approfondir ces compétences pour devenir un développeur full-stack.</li>
-                        <li>Bonnes pratiques : Maîtrise des outils modernes, souci de la qualité du code, et recherche constante d’améliorations techniques.</li>             
-                    </ul>
+                <ul className={m.skill__list}>
+                    <li>Frontend : Création d’interfaces utilisateur performantes et intuitives, avec une attention particulière à l’optimisation des performances et à un code propre et lisible.</li>
+                    <li>Backend : Conception d’API et gestion de bases de données, avec l’ambition d’approfondir ces compétences pour devenir un développeur full-stack.</li>
+                    <li>Bonnes pratiques : Maîtrise des outils modernes, souci de la qualité du code, et recherche constante d’améliorations techniques.</li>
+                </ul>
                 <Skills />
             </section>
             {/* project section */}
             <section id="project">
                 <h2>Projets</h2>
                 <Projects />
-            </section>
-            {/* contact section */}
-            <section id="contact">
-
             </section>
         </main>
     )

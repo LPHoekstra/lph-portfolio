@@ -1,11 +1,2 @@
 @use "./variables.scss" as *;
-
-* {
-    margin: 0;
-}
-
-html {
-    font-family: "Poppins", sans-serif;
-    background-color: $main-background-color;
-    color: $main-text-color;
-}
+@use "./base.scss" as *;

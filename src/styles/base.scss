@@ -1,0 +1,20 @@
+@use "./variables.scss" as *;
+
+* {
+    margin: 0;
+}
+
+html {
+    font-family: "Poppins", sans-serif;
+    background-color: $main-background-color;
+    color: $main-text-color;
+}
+
+section {
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+}
+
+h2 {
+    font-size: 2em;
+}
