@@ -10,7 +10,7 @@ function Header() {
                 <a href="#project">Projets</a>
                 <a href="#contact">Me Contacter</a>
             </nav>
-            <a href="">Télécharger le CV</a>
+            <a href="../../assets/cv/" className={m.header__cvLink}>Télécharger le CV</a>
         </header>
     )
 }
