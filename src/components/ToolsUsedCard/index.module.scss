@@ -1,0 +1,13 @@
+.toolsContainer {
+    display: flex;
+    justify-content: start;
+
+    &__tools {
+        padding: 0 1em;
+        border-radius: 1em;
+        color: rgb(46, 46, 46);
+        background-color: #a0a0a0;
+        margin: 0.5em;
+        text-align: left;
+    }
+}

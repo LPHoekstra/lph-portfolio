@@ -1,8 +1,16 @@
 import m from "./index.module.scss"
 import ProjectItem from "../ProjectItem"
 import { useState } from "react"
+import { projectOverview } from "../../data/projects"
 
-const cateBtn = ["Tous", "front-end", "back-end", "autre"]
+const cateBtn = ["Tous"]
+projectOverview.forEach(project => {
+    project.categorie.forEach(categorie => {
+        if (!cateBtn.includes(categorie)) {
+            cateBtn.push(categorie)
+        }
+    }) 
+})
 
 function Projects() {
     const [categorie, setCategorie] = useState("Tous")
@@ -14,6 +22,7 @@ function Projects() {
                     <button key={btn}
                         className={`${m.btnContainer__btn} ${categorie === btn && m.btnContainer__btn_selected}`}
                         onClick={() => setCategorie(btn)}
+                        aria-label={`Show the ${btn} projects`}
                     >
                         {btn}
                     </button>
