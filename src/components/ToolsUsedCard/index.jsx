@@ -12,7 +12,7 @@ function ToolsUsedCard({ tools }) {
 }
 
 ToolsUsedCard.propTypes = {
-    tools: PropTypes.string.isRequired
+    tools: PropTypes.array.isRequired
 }
 
 export default ToolsUsedCard;

@@ -1,14 +1,21 @@
 import m from "./index.module.scss"
 import PropTypes from "prop-types"
 import close from "../../assets/icons/close.svg"
+import { useCallback, useEffect } from "react"
 
 // add a trap focus to the modal
 function Modal({ closeModal, content }) {
-    window.addEventListener("keydown", (e) => {
+    const handleEscape = useCallback((e) => {
         if (e.key === "Escape") {
             closeModal()
         }
-    })
+    }, [closeModal])
+
+    useEffect(() => {
+        window.addEventListener("keydown", handleEscape)
+
+        return () => window.removeEventListener("keydown", handleEscape)
+    }, [handleEscape])
 
     return (
         <aside className={m.modal} onMouseDown={closeModal} aria-modal="true" role="dialog"> 
