@@ -43,10 +43,3 @@ $btn-border-radius: 50px;
         }
     }
 }
-
-.projectContainer {
-    display: grid;
-    grid-template: 1fr 1fr / repeat(2, 500px);
-    justify-content: center;
-    gap: 6em;
-}

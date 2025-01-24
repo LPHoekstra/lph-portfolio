@@ -1,5 +1,5 @@
 import m from "./index.module.scss"
-import ProjectItem from "../ProjectItem"
+import ProjectRendering from "../ProjectRendering"
 import { useState } from "react"
 import { projectOverview } from "../../data/projects"
 
@@ -9,7 +9,7 @@ projectOverview.forEach(project => {
         if (!cateBtn.includes(categorie)) {
             cateBtn.push(categorie)
         }
-    }) 
+    })
 })
 
 function Projects() {
@@ -28,9 +28,7 @@ function Projects() {
                     </button>
                 ))}
             </div>
-            <div className={m.projectContainer}>
-                <ProjectItem categories={categorie} />
-            </div>
+            <ProjectRendering categories={categorie} />
         </div>
     )
 }

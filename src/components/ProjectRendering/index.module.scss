@@ -29,3 +29,10 @@
         text-align: left;
     }
 }
+
+.projectContainer {
+    display: grid;
+    grid-template: 1fr / repeat(2, 500px);
+    justify-content: center;
+    gap: 4em;
+}
