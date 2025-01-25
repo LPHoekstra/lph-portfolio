@@ -13,7 +13,7 @@ function Home() {
                 </p>
             </section>
             {/* About me section */}
-            <section id="about">
+            <section id="about" className={m.about}>
                 <h2>A propos</h2>
                 <p className={m.about__content}>
                     Passionné par le développement web, je combine curiosité, rigueur et une capacité d’adaptation qui me permet de répondre efficacement aux besoins des projets.
@@ -38,7 +38,7 @@ function Home() {
                 <Skills />
             </section>
             {/* project section */}
-            <section id="project">
+            <section id="project" className={m.project}>
                 <h2>Projets</h2>
                 <Projects />
             </section>

@@ -50,6 +50,7 @@ function ProjectRendering({ categories }) {
             const button =
                 <button
                     key={`button-${i}`}
+                    className={`${m.paginationContainer__btn} ${currentPage == i && m.paginationContainer__btn_selected}`}
                     onClick={() => setCurrentPage(i)}
                 >
                     {i}
@@ -80,7 +81,8 @@ function ProjectRendering({ categories }) {
                     </div>
                 ))}
             </div>
-            <div>{pagination && pagination}</div>
+            <div className={m.paginationContainer}>{pagination && pagination}</div>
+            {/* if possible on open and close of the modal the component ProjectRendering should'nt rerender */}
             {modalIsOpen && <Modal
                 closeModal={closeModal}
                 wrapperClass={m.modal__wrapper}

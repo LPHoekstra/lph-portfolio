@@ -1,8 +1,12 @@
+@use "../../styles/variables.scss" as *;
+
 .main {
     text-align: center;
 }
 
 .about {
+    background-color: $secondary-background-color;
+
     &__content {
         max-width: 1000px;
         margin: 2em auto;
@@ -19,4 +23,8 @@
         font-size: 1.125em;
         text-align: left;
     }
+}
+
+.project {
+    background-color: $secondary-background-color;
 }

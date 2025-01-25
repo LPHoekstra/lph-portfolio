@@ -1,16 +1,65 @@
+@use "../../styles/variables.scss" as *;
+
+$border-radius: 1.25em;
+
+.projectContainer {
+    display: grid;
+    grid-template: 1fr / repeat(2, 1fr);
+    justify-content: center;
+    gap: 2em 4em;
+    max-width: 1200px;
+    padding-left: 2em;
+    padding-right: 2em;
+    margin: auto;
+}
+
 .project {
     text-align: left;
     cursor: pointer;
-
+    background-color: $main-background-color;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    border-radius: $border-radius;
+    
     &__title {
-        margin-top: 0.5em;
-        margin-bottom: 0.5em;
+        margin-left: 0.5em;
     }
-
+    
     &__img {
-        width: 500px;
-        height: 300px;
+        border-radius: $border-radius;
         object-fit: cover;
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.paginationContainer {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    margin-top: 2em;
+
+    &__btn {
+        font-size: 1.125em;
+        border-radius: 100%;
+        border: solid 1px #a3a3a3;
+        background-color: $main-background-color;
+        color: $main-text-color;
+        padding: 4px 10px;
+        cursor: pointer;
+        transition: transform 100ms ease;
+
+        &_selected {
+            border-color: $main-text-color;
+            transform: scale(1.1);
+        }
+
+        &:hover {
+            border-color: $main-text-color;
+            transform: scale(1.1);
+        }
     }
 }
 
@@ -28,11 +77,4 @@
     &__description {
         text-align: left;
     }
-}
-
-.projectContainer {
-    display: grid;
-    grid-template: 1fr / repeat(2, 500px);
-    justify-content: center;
-    gap: 4em;
 }
