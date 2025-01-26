@@ -9,7 +9,7 @@ function Footer() {
                 <a href="mailto:tomhoekstra27@gmail.com">
                     <img src={emailIcon} alt="email of Tom Hoekstra" className={m.linkContainer__img}/>
                 </a>
-                <a href="https://github.com/LPHoekstra">
+                <a href="https://github.com/LPHoekstra" target="_blank">
                     <img src={githubIcon} alt="github of Tom Hoekstra" className={m.linkContainer__img}/>
                 </a>
             </div>

@@ -1,11 +1,11 @@
 @use "./../../styles/variables.scss" as *;
 @use "./../../styles/placeholder.scss" as *;
 
+$background-color: #313131;
+
 .header {
     display: flex;
     justify-content: space-around;
-    padding-top: 1%;
-    padding-bottom: 1em;
     align-items: center;
     position: sticky;
     top: 0;
@@ -13,27 +13,55 @@
 
     &::after {
         @extend %pseudo-elements-absolute;
-        background-color: #313131;
+        background-color: $background-color;
         z-index: -1;
         opacity: 0.7;
-    }
-
-    &__cvLink {
-        text-decoration: none;
-        color: $main-text-color;
     }
 }
 
 .navBar {
-    display: flex;;
-    gap: 1em;
-    
-    a {
+    ul {
+        display: flex;
+        padding: 0;
+        list-style-type: none;
+    }
+
+    &__link {
+        display: inline-block;
+        padding: 20px 15px;
+        font-size: 1.125em;
         text-decoration: none;
         color: $main-text-color;
+        position: relative;
+        z-index: 1;
+
+        &::after {
+            @extend %pseudo-elements-absolute;
+            opacity: 0;
+            background-color: $btn-background;
+            z-index: -1;
+            transition: opacity 300ms ease-in-out;
+            will-change: opacity;
+        }
 
         &:hover {
-            text-decoration: underline;
+            &::after {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.externalLink {
+    &__img {
+        // margin right to center the navbar. temporary solution??
+        margin-right: 7vw;
+        width: 30px;
+        height: 30px;
+        transition: opacity 200ms ease-in-out;
+
+        &:hover {
+            opacity: 0.75;
         }
     }
 }
