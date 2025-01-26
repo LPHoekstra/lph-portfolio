@@ -14,24 +14,34 @@ $border-radius: 1.25em;
 }
 
 .project {
-    text-align: left;
     cursor: pointer;
     background-color: $main-background-color;
     padding: 1em;
     display: flex;
     flex-direction: column;
+    align-items: start;
     gap: 0.5em;
     border-radius: $border-radius;
-    
+    box-shadow:
+        1.8px 1.6px 5.3px -3px rgba(0, 0, 0, 0.108),
+        6.3px 5.4px 17.6px -3px rgba(0, 0, 0, 0.148),
+        31px 27px 79px -3px rgba(0, 0, 0, 0.3);
+    transition: transform 200ms ease-in-out;
+    will-change: transform;
+
     &__title {
         margin-left: 0.5em;
     }
-    
+
     &__img {
         border-radius: $border-radius;
         object-fit: cover;
         height: 100%;
         width: 100%;
+    }
+
+    &:hover {
+        transform: translateX(10px) translateY(-10px);
     }
 }
 
@@ -44,7 +54,7 @@ $border-radius: 1.25em;
     &__btn {
         font-size: 1.125em;
         border-radius: 100%;
-        border: solid 1px #a3a3a3;
+        border: solid 1px $btn-border;
         background-color: $main-background-color;
         color: $main-text-color;
         padding: 4px 10px;

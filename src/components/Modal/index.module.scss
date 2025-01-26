@@ -1,5 +1,19 @@
 @use "./../../styles/variables.scss" as *;
 
+@keyframes modalApparition {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.4;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
 .modal {
     height: 100%;
     width: 100%;
@@ -8,15 +22,15 @@
     top: 0;
     left: 0;
     background-color: rgba($color: (#000000), $alpha: 0.5);
-
+    
     &__wrapper {
-        background-color: rgb(65, 65, 65);
+        position: relative;
+        background-color: $secondary-background-color;
         margin: 10% auto;
         padding: 1em 2em;
-        border: 1px solid black;
         width: 80%;
         max-width: 1200px;
-        position: relative;
+        animation: forwards modalApparition 400ms;
     }
 
     &__close {

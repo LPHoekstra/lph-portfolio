@@ -11,7 +11,7 @@ const maxProjectsPerPage = 4
 function ProjectRendering({ categories }) {
     const [modalIsOpen, setModalIsOpen] = useState(false)
     const [modalContent, setModalContent] = useState(null)
-    const [pagination, setPagination] = useState(null)
+    const [paginationBtn, setPaginationBtn] = useState(null)
     const [currentPage, setCurrentPage] = useState(1)
 
     const closeModal = () => {
@@ -24,7 +24,7 @@ function ProjectRendering({ categories }) {
     }
 
     // filter the projects according to the categories
-    const projectFiltered = useMemo(() => {
+    const projectFilteredByCategorie = useMemo(() => {
         let FilteringProjects = projectOverview
         setCurrentPage(1)
         if (categories !== "Tous") {
@@ -37,13 +37,13 @@ function ProjectRendering({ categories }) {
     }, [categories])
 
     // handle the pagination
-    const visibleProjects = useMemo(() => {
+    const visibleProjectsWithPagination = useMemo(() => {
         const paginationButton = []
-        const numberOfPages = Math.ceil((projectFiltered.length + 1) / maxProjectsPerPage)
+        const numberOfPages = Math.ceil((projectFilteredByCategorie.length + 1) / maxProjectsPerPage)
 
         const startIndex = (currentPage - 1) * maxProjectsPerPage
         const endIndex = startIndex + maxProjectsPerPage
-        const visibleProjects = projectFiltered.slice(startIndex, endIndex)
+        const visibleProjects = projectFilteredByCategorie.slice(startIndex, endIndex)
 
         // create the pagination button
         for (let i = 1; i <= numberOfPages; i++) {
@@ -51,6 +51,7 @@ function ProjectRendering({ categories }) {
                 <button
                     key={`button-${i}`}
                     className={`${m.paginationContainer__btn} ${currentPage == i && m.paginationContainer__btn_selected}`}
+                    aria-label={`Page ${i}`}
                     onClick={() => setCurrentPage(i)}
                 >
                     {i}
@@ -58,15 +59,15 @@ function ProjectRendering({ categories }) {
 
             paginationButton.push(button)
         }
-        paginationButton.length > 1 ? setPagination(paginationButton) : setPagination(null)
+        paginationButton.length > 1 ? setPaginationBtn(paginationButton) : setPaginationBtn(null)
 
         return visibleProjects
-    }, [currentPage, projectFiltered])
+    }, [currentPage, projectFilteredByCategorie])
 
     return (
         <>
             <div className={m.projectContainer}>
-                {visibleProjects.map((project) => (
+                {visibleProjectsWithPagination.map((project) => (
                     <div key={`${project.title}-${project.tools}`}
                         className={m.project}
                         tabIndex={0}
@@ -81,7 +82,7 @@ function ProjectRendering({ categories }) {
                     </div>
                 ))}
             </div>
-            <div className={m.paginationContainer}>{pagination && pagination}</div>
+            <div className={m.paginationContainer}>{paginationBtn && paginationBtn}</div>
             {/* if possible on open and close of the modal the component ProjectRendering should'nt rerender */}
             {modalIsOpen && <Modal
                 closeModal={closeModal}

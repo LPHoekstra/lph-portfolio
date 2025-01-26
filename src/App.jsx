@@ -3,9 +3,6 @@ import Header from "./layout/Header"
 import Footer from "./layout/Footer"
 import "./styles/main.scss"
 
-// add typescript 
-// add lazy load components ?
-// add a theme switcher
 function App() {
   return (
     <>
