@@ -44,6 +44,12 @@ $background-color: #313131;
             will-change: opacity;
         }
 
+        &_selected {
+            &::after {
+                opacity: 1;
+            }
+        }
+
         &:hover {
             &::after {
                 opacity: 1;

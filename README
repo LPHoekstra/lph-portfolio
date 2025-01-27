@@ -1,7 +1,8 @@
 To implement:
+    add responsive for smallscreen
     add typescript 
     add lazy load components
-    add header localization section and redirection animation on the page
+    add redirection animation on the page
     add a theme switcher
     add animation on project filter
     add animation modal from the trigger
