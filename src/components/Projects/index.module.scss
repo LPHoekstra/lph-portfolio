@@ -1,5 +1,6 @@
 @use "./../../styles/variables.scss" as *;
 @use "./../../styles/placeholder.scss" as *;
+@use "./../../styles/mixins.scss" as *;
 
 $btn-border-radius: 50px;
 
@@ -10,35 +11,10 @@ $btn-border-radius: 50px;
     gap: 50px;
 
     &__btn {
-        cursor: pointer;
-        position: relative;
-        display: block;
-        border-radius: $btn-border-radius;
-        background-color: $main-background-color;
-        color: #f5f5f5;
-        font-size: 1em;
-        padding: 1em 2em;
-        border: solid 1px $btn-border;
-        z-index: 1;
-
-        &_selected {
-            background-color: $btn-background;
-        }
-
-        &:hover {
-            &::after {
-                opacity: 1;
+        @include button {
+            &_selected {
+                background-color: $btn-background;
             }
-        }
-
-        &::after {
-            @extend %pseudo-elements-absolute;
-            opacity: 0;
-            border-radius: $btn-border-radius;
-            background-color: $btn-background;
-            z-index: -1;
-            transition: opacity 200ms ease;
-            will-change: opacity;
         }
     }
 }

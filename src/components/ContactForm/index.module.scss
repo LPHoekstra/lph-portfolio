@@ -1,0 +1,34 @@
+@use "./../../styles/variables.scss" as *;
+@use "./../../styles/placeholder.scss" as *;
+@use "./../../styles/mixins.scss" as *;
+
+$btn-border-radius: 50px;
+
+.form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: auto;
+    text-align: left;
+
+    label {
+        margin-top: 1em;
+    }
+
+    input {
+        padding: 0.5em;
+        font-size: 1em;
+    }
+
+    textarea {
+        height: 300px;
+        font-size: 1em;
+    }
+
+    &__sendBtn {
+        @include button {
+            max-width: fit-content;
+            margin: 1em auto 0 auto;
+        }
+    }
+}

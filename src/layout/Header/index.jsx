@@ -2,12 +2,6 @@ import m from "./index.module.scss"
 import githubIcon from '../../assets/icons/github.svg'
 import { useEffect, useState } from "react"
 
-const sections = [
-    { id: "about" },
-    { id: "skill" },
-    { id: "project" }
-]
-
 const headerList = [
     {
         link: "#about",
@@ -37,11 +31,6 @@ function Header() {
 
     // to get the current section on the screen
     useEffect(() => {
-        // get the sections in the DOM
-        const sectionElements = sections.map((section) =>
-            document.getElementById(section.id)
-        )
-
         // set the active section in the state if isIntersecting
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
@@ -49,10 +38,11 @@ function Header() {
                     setActiveSection(entry.target.id)
                 }
             })
-        }, { threshold: 0.65 })
-
+        }, { threshold: 0.55 })
+        
         // set the observer on each sections
-        sectionElements.forEach((element) => {
+        headerList.forEach((section) => {
+            const element = document.getElementById(section.link.split("#")[1])
             if (element) {
                 observer.observe(element)
             }

@@ -1,3 +1,4 @@
+import ContactForm from "../../components/ContactForm"
 import Projects from "../../components/Projects"
 import Skills from "../../components/Skills"
 import m from "./index.module.scss"
@@ -28,7 +29,7 @@ function Home() {
                 </p>
             </section>
             {/* skill section */}
-            <section className={m.skill} id="skill">
+            <section id="skill" className={m.skill}>
                 <h2>Compétences</h2>
                 <ul className={m.skill__list}>
                     <li>Frontend : Création d’interfaces utilisateur performantes et intuitives, avec une attention particulière à l’optimisation des performances et à un code propre et lisible.</li>
@@ -41,6 +42,10 @@ function Home() {
             <section id="project" className={m.project}>
                 <h2>Projets</h2>
                 <Projects />
+            </section>
+            <section id="contact">
+                <h2>Me contacter</h2>
+                <ContactForm />
             </section>
         </main>
     )
