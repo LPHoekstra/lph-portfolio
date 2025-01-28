@@ -59,7 +59,12 @@ function Header() {
         })
     }, [])
 
-    console.log(activeSection)
+    const redirection = (e) => {
+        e.preventDefault()
+        const sectionNameToRedirect = e.target.href.split("#")[1]
+        const section = document.getElementById(sectionNameToRedirect)
+        section.scrollIntoView({ behavior: "smooth", block: "start" })
+    }
 
     return (
         <header className={m.header}>
@@ -74,6 +79,7 @@ function Header() {
                                     ${m.navBar__link} 
                                     ${element.link.split("#")[1] === activeSection ? m.navBar__link_selected : ""}
                                 `}
+                                onClick={redirection}
                             >
                                 {element.content}
                             </a>

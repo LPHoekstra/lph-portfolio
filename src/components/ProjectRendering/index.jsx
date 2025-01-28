@@ -82,7 +82,11 @@ function ProjectRendering({ categories }) {
                     </div>
                 ))}
             </div>
-            <div className={m.paginationContainer}>{paginationBtn && paginationBtn}</div>
+            {paginationBtn &&
+                <div className={m.paginationContainer}>
+                    {paginationBtn}
+                </div>
+            }
             {/* if possible on open and close of the modal the component ProjectRendering should'nt rerender */}
             {modalIsOpen && <Modal
                 closeModal={closeModal}
