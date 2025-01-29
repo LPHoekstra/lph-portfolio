@@ -43,8 +43,8 @@ function Home() {
                 <h2>Projets</h2>
                 <Projects />
             </section>
-            <section id="contact">
-                <h2>Me contacter</h2>
+            <section id="contact" className={m.contact}>
+                <h2 className={m.contact__title}>Me contacter</h2>
                 <ContactForm />
             </section>
         </main>

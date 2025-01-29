@@ -28,3 +28,9 @@
 .project {
     background-color: $secondary-background-color;
 }
+
+.contact {
+    &__title {
+        margin-bottom: 1em;
+    }
+}

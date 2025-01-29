@@ -1,8 +1,8 @@
 @use "./../../styles/variables.scss" as *;
-@use "./../../styles/placeholder.scss" as *;
 @use "./../../styles/mixins.scss" as *;
 
 $btn-border-radius: 50px;
+$error-color: rgb(255, 74, 74);
 
 .form {
     display: flex;
@@ -12,17 +12,23 @@ $btn-border-radius: 50px;
     text-align: left;
 
     label {
-        margin-top: 1em;
+        @extend %sr-only;
     }
 
-    input {
+    &__input {
         padding: 0.5em;
         font-size: 1em;
+        margin-bottom: 1em;
+
+        &_error {
+            border: solid 3px $error-color;
+        }
     }
 
     textarea {
         height: 300px;
         font-size: 1em;
+        padding: 0.5em;
     }
 
     &__sendBtn {
@@ -30,5 +36,12 @@ $btn-border-radius: 50px;
             max-width: fit-content;
             margin: 1em auto 0 auto;
         }
+    }
+
+    &__errorMsg {
+        text-align: center;
+        color: $error-color;
+        margin-top: 1em;
+        font-size: 1.125em;
     }
 }
