@@ -5,6 +5,6 @@ To implement:
     add a theme switcher
     add animation on project filter
     add animation modal from the trigger
-
+    add a modal trap for tabulation
 To change:
     optimization on ProjectRendering component

@@ -3,11 +3,11 @@ import ProjectRendering from "../ProjectRendering"
 import { useState } from "react"
 import { projectOverview } from "../../data/projects"
 
-const cateBtn = ["Tous"]
+const categoriesBtn = ["Tous"]
 projectOverview.forEach(project => {
     project.categorie.forEach(categorie => {
-        if (!cateBtn.includes(categorie)) {
-            cateBtn.push(categorie)
+        if (!categoriesBtn.includes(categorie)) {
+            categoriesBtn.push(categorie)
         }
     })
 })
@@ -18,11 +18,11 @@ function Projects() {
     return (
         <div>
             <div className={m.btnContainer}>
-                {cateBtn.map((btn) => (
+                {categoriesBtn.map((btn) => (
                     <button key={btn}
                         className={`${m.btnContainer__btn} ${categorie === btn && m.btnContainer__btn_selected}`}
                         onClick={() => setCategorie(btn)}
-                        aria-label={`Show the ${btn} projects`}
+                        aria-label={`Affiche les projets ${btn}`}
                     >
                         {btn}
                     </button>

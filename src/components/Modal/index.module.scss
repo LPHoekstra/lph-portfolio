@@ -35,5 +35,10 @@
 
     &__close {
         margin-bottom: 0.75em;
+        cursor: pointer;
+
+        &:hover {
+            opacity: 0.75;
+        }
     }
 }

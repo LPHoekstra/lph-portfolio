@@ -52,7 +52,11 @@ function ProjectRendering({ categories }) {
                     key={`button-${i}`}
                     className={`${m.paginationContainer__btn} ${currentPage == i && m.paginationContainer__btn_selected}`}
                     aria-label={`Page ${i}`}
-                    onClick={() => setCurrentPage(i)}
+                    onClick={() => {
+                        setCurrentPage(i)
+                        const projectSection = document.getElementById("project")
+                        projectSection.scrollIntoView({ behavior: "smooth", block: "start" })
+                    }}
                 >
                     {i}
                 </button>
@@ -97,10 +101,12 @@ function ProjectRendering({ categories }) {
                             className={m.modal__img}
                         />
                         <ToolsUsedCard tools={modalContent.tools} />
-                        <h2 className={m.modal__title}>{modalContent.title}</h2>
-                        <a href={modalContent.repo} target="_blank">
-                            <img src={github} alt="Dépot github du projet" />
-                        </a>
+                        <div className={m.modal__titleAndLinkContainer}>
+                            <h2 className={m.modal__title}>{modalContent.title}</h2>
+                            <a href={modalContent.repo} target="_blank">
+                                <img src={github} alt="Dépot github du projet" />
+                            </a>
+                        </div>
                         <p className={m.modal__description}>{modalContent.description}</p>
                     </div>
                 }
