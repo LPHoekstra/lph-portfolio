@@ -1,8 +1,13 @@
 import m from "./index.module.scss"
 import githubIcon from '../../assets/icons/github.svg'
 import { useEffect, useState } from "react"
+import { redirection } from "../../utils/redirectionUtils"
 
 const headerList = [
+    {
+        link: "#hero",
+        content: "Accueil"
+    },
     {
         link: "#about",
         content: "A propos"
@@ -49,16 +54,9 @@ function Header() {
         })
     }, [])
 
-    const redirection = (e) => {
-        e.preventDefault()
-        const sectionNameToRedirect = e.target.href.split("#")[1]
-        const section = document.getElementById(sectionNameToRedirect)
-        section.scrollIntoView({ behavior: "smooth", block: "start" })
-    }
-
     return (
         <header className={m.header}>
-            <h1>LPHoekstra</h1>
+            <span className={m.header__title}>LPHoekstra</span>
             <nav className={m.navBar}>
                 <ul>
                     {headerList.map((element) => (

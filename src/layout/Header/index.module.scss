@@ -11,6 +11,11 @@ $background-color: #313131;
     top: 0;
     z-index: 1000;
 
+    &__title {
+        font-size: 2em;
+        font-weight: 500;
+    }
+
     &::after {
         @extend %pseudo-elements-absolute;
         background-color: $background-color;
