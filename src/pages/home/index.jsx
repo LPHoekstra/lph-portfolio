@@ -3,12 +3,14 @@ import Projects from "../../components/Projects"
 import Skills from "../../components/Skills"
 import m from "./index.module.scss"
 import { redirection } from "../../utils/redirectionUtils"
+import HeroBackground from "../../components/HeroBackgroundAnimation"
 
 function Home() {
     return (
         <main className={m.main}>
             {/* fast presentation section */}
             <section id="hero" className={m.hero}>
+                <HeroBackground />
                 <h1 className={m.hero__title}>Tom Hoekstra</h1>
                 <p>
                     Développeur Web | Frontend
