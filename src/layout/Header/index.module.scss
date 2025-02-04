@@ -1,7 +1,17 @@
 @use "./../../styles/variables.scss" as *;
 @use "./../../styles/placeholder.scss" as *;
+@use "./../../styles/mixins.scss" as *;
 
 $background-color: #313131;
+
+@keyframes navbar-small-screen {
+    from {
+        transform: translateX(-30vw);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
 
 .header {
     display: flex;
@@ -11,6 +21,7 @@ $background-color: #313131;
     width: 100%;
     top: 0;
     z-index: 1000;
+    min-height: 4.188em;
 
     &__title {
         font-size: 2em;
@@ -19,18 +30,49 @@ $background-color: #313131;
 
     &::after {
         @extend %pseudo-elements-absolute;
-        background-color: $background-color;
+        background-color: rgba($color: $background-color, $alpha: 0.7);
         z-index: -1;
-        opacity: 0.7;
     }
 }
 
 .navBar {
-    ul {
+    @include small-screen {
+        display: none;
+    }
+
+    &_active {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+    
+    &__list {
         display: flex;
         padding: 0;
         list-style-type: none;
+        
+        @include small-screen {
+            position: relative;
+            flex-direction: column;
+            height: 100%;
+            width: 30vw;
+            animation: forwards navbar-small-screen 300ms;
+            
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba($color: $background-color, $alpha: 0.7);
+            }
+        }
     }
+
 
     &__link {
         display: inline-block;
@@ -40,6 +82,11 @@ $background-color: #313131;
         color: $main-text-color;
         position: relative;
         z-index: 1;
+
+        @include small-screen {
+            box-sizing: border-box;
+            width: 100%;
+        }
 
         &::after {
             @extend %pseudo-elements-absolute;
@@ -64,16 +111,49 @@ $background-color: #313131;
     }
 }
 
-.externalLink {
-    &__img {
+.linkContainer {
+    display: flex;
+    gap: 1em;
+
+    &__link {
         // margin right to center the navbar. temporary solution??
         margin-right: 7vw;
         width: 30px;
         height: 30px;
-        transition: opacity 200ms ease-in-out;
+        
+        @media (max-width: 1100px) {
+            margin-right: 0;
+        }
 
+    }
+
+    &__img {
+        transition: opacity 200ms ease-in-out;
+    
         &:hover {
             opacity: 0.75;
         }
+    }
+}
+
+.openNavBarBtn {
+    display: none;
+    margin-left: 1em;
+
+    @include small-screen {
+        display: block;
+    }
+
+    &__srOnly {
+        @extend %sr-only
+    }
+
+    &__bar {
+        display: block;
+        width: 25px;
+        height: 2px;
+        background-color: white;
+        margin-top: 6px;
+        border-radius: 2px;
     }
 }

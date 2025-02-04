@@ -33,6 +33,7 @@ const headerList = [
 
 function Header() {
     const [activeSection, setActiveSection] = useState(null)
+    const [navBarIsOpen, setNavBarIsOpen] = useState(false)
 
     // to get the current section on the screen
     useEffect(() => {
@@ -44,7 +45,7 @@ function Header() {
                 }
             })
         }, { threshold: 0.55 })
-        
+
         // set the observer on each sections
         headerList.forEach((section) => {
             const element = document.getElementById(section.link.split("#")[1])
@@ -57,10 +58,10 @@ function Header() {
     return (
         <header className={m.header}>
             <span className={m.header__title}>LPHoekstra</span>
-            <nav className={m.navBar}>
-                <ul>
+            <nav className={`${m.navBar} ${navBarIsOpen ? m.navBar_active : ""}`} onMouseDown={() => setNavBarIsOpen(false)}>
+                <ul className={`${m.navBar__list} ${navBarIsOpen ? m.navBar__test : ""}`} onMouseDown={(e) => e.stopPropagation()}>
                     {headerList.map((element) => (
-                        <li key={element.content}>
+                        <li key={element.content} onMouseDown={(e) => e.stopPropagation()}>
                             <a href={element.link}
                                 target={element.target}
                                 className={`
@@ -75,10 +76,16 @@ function Header() {
                     ))}
                 </ul>
             </nav>
-            <div>
-                <a href="https://github.com/LPHoekstra" target="_blank">
-                    <img src={githubIcon} alt="github of Tom Hoekstra" className={m.externalLink__img} />
+            <div className={m.linkContainer}>
+                <a href="https://github.com/LPHoekstra" target="_blank" className={m.linkContainer__link}>
+                    <img src={githubIcon} alt="Github de Tom Hoekstra" className={m.linkContainer__img} />
                 </a>
+                <div className={m.openNavBarBtn} onClick={() => setNavBarIsOpen(true)}>
+                    <button className={m.openNavBarBtn__srOnly}>Ouvrir barre de navigation</button>
+                    <span className={m.openNavBarBtn__bar}></span>
+                    <span className={m.openNavBarBtn__bar}></span>
+                    <span className={m.openNavBarBtn__bar}></span>
+                </div>
             </div>
         </header>
     )
