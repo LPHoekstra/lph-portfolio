@@ -58,7 +58,7 @@ $background-color: #313131;
             position: relative;
             flex-direction: column;
             height: 100%;
-            width: 30vw;
+            width: max(30vw, 9.375em);
             animation: forwards navbar-small-screen 300ms;
             
             &::after {
@@ -73,7 +73,6 @@ $background-color: #313131;
         }
     }
 
-
     &__link {
         display: inline-block;
         padding: 20px 15px;
@@ -86,6 +85,7 @@ $background-color: #313131;
         @include small-screen {
             box-sizing: border-box;
             width: 100%;
+            text-wrap: nowrap;
         }
 
         &::after {

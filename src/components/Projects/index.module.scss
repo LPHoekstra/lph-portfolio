@@ -7,11 +7,23 @@ $btn-border-radius: 50px;
 .btnContainer {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     margin: 2em 0;
-    gap: 50px;
+    gap: 3.125em;
+
+    @include small-screen {
+        max-width: 400px;
+        gap: 1em;
+        margin-left: auto;
+        margin-right: auto;
+    }
 
     &__btn {
         @include button {
+            @include small-screen {
+                min-width: 135px;
+            }
+
             &_selected {
                 background-color: $btn-background;
             }

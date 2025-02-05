@@ -1,13 +1,18 @@
+@use "../../styles/mixins.scss" as *;
+
 .toolsContainer {
     display: flex;
     justify-content: start;
+    flex-wrap: wrap;
+    margin-left: 0.5em;
+    gap: 0.5em;
 
     &__tools {
         padding: 0 1em;
         border-radius: 1em;
         color: rgb(46, 46, 46);
         background-color: #a0a0a0;
-        margin: 0.5em;
         text-align: left;
+        text-wrap: nowrap;
     }
 }

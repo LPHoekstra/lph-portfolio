@@ -59,7 +59,7 @@ function Header() {
         <header className={m.header}>
             <span className={m.header__title}>LPHoekstra</span>
             <nav className={`${m.navBar} ${navBarIsOpen ? m.navBar_active : ""}`} onMouseDown={() => setNavBarIsOpen(false)}>
-                <ul className={`${m.navBar__list} ${navBarIsOpen ? m.navBar__test : ""}`} onMouseDown={(e) => e.stopPropagation()}>
+                <ul className={m.navBar__list} onMouseDown={(e) => e.stopPropagation()}>
                     {headerList.map((element) => (
                         <li key={element.content} onMouseDown={(e) => e.stopPropagation()}>
                             <a href={element.link}
