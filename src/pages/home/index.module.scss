@@ -1,6 +1,8 @@
 @use "../../styles/variables.scss" as *;
 @use "../../styles/mixins.scss" as *;
 
+$max-width: 52vw;
+
 .main {
     text-align: center;
 }
@@ -29,9 +31,9 @@
 
 .about {
     background-color: $secondary-background-color;
-
+    
     &__content {
-        max-width: 1000px;
+        max-width: $max-width;
         margin: 2em auto;
     }
 }
@@ -39,7 +41,7 @@
 .skill {
     &__list {
         margin: 2em auto;
-        max-width: 1000px;
+        max-width: $max-width;
         display: flex;
         flex-wrap: wrap;
         gap: 0.5em;

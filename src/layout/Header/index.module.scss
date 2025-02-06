@@ -75,7 +75,7 @@ $background-color: #313131;
 
     &__link {
         display: inline-block;
-        padding: 20px 15px;
+        padding: 1.25em 0.938em;
         font-size: 1.125em;
         text-decoration: none;
         color: $main-text-color;
@@ -118,8 +118,8 @@ $background-color: #313131;
     &__link {
         // margin right to center the navbar. temporary solution??
         margin-right: 7vw;
-        width: 30px;
-        height: 30px;
+        width: 1.875em;
+        height: 1.875em;
         
         @media (max-width: 1100px) {
             margin-right: 0;
@@ -129,6 +129,8 @@ $background-color: #313131;
 
     &__img {
         transition: opacity 200ms ease-in-out;
+        height: 1.875em;
+        width: 1.875em;
     
         &:hover {
             opacity: 0.75;
@@ -150,10 +152,10 @@ $background-color: #313131;
 
     &__bar {
         display: block;
-        width: 25px;
-        height: 2px;
+        width: 1.563em;
+        height: 0.125em;
         background-color: white;
-        margin-top: 6px;
-        border-radius: 2px;
+        margin-top: 0.375em;
+        border-radius: 0.125em;
     }
 }

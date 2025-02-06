@@ -2,8 +2,6 @@
 @use "./../../styles/placeholder.scss" as *;
 @use "./../../styles/mixins.scss" as *;
 
-$btn-border-radius: 50px;
-
 .btnContainer {
     display: flex;
     justify-content: center;

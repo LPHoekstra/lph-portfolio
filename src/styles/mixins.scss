@@ -1,10 +1,16 @@
 @use "./variables.scss" as *;
 @use "./placeholder.scss" as *;
 
-$btn-border-radius: 50px;
+$btn-border-radius: 3.125em;
 
 @mixin small-screen() {
     @media (max-width: 900px) {
+        @content;
+    }
+}
+
+@mixin wide-screen () {
+    @media (min-width: 2200px) {
         @content;
     }
 }
@@ -18,7 +24,7 @@ $btn-border-radius: 50px;
     color: #f5f5f5;
     font-size: 1em;
     padding: 1em 2em;
-    border: solid 1px $btn-border;
+    border: solid 0.063em $btn-border;
     z-index: 1;
     @content;
 

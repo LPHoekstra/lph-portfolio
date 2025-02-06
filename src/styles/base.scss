@@ -1,4 +1,5 @@
 @use "./variables.scss" as *;
+@use "./mixins.scss" as *;
 
 * {
     margin: 0;
@@ -8,6 +9,10 @@ html {
     font-family: "Poppins", sans-serif;
     background-color: $main-background-color;
     color: $main-text-color;
+
+    @include wide-screen {
+        font-size: 0.93vw; // 18px in vw
+    }
 }
 
 form {

@@ -104,7 +104,7 @@ function ProjectRendering({ categories }) {
                         <div className={m.modal__titleAndLinkContainer}>
                             <h2 className={m.modal__title}>{modalContent.title}</h2>
                             <a href={modalContent.repo} target="_blank">
-                                <img src={github} alt="Dépot github du projet" />
+                                <img src={github} className={m.modal__linkImg} alt="Dépot github du projet" />
                             </a>
                         </div>
                         <p className={m.modal__description}>{modalContent.description}</p>

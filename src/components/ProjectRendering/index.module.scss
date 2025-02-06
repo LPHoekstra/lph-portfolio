@@ -8,7 +8,7 @@ $border-radius: 1.25em;
     grid-template: 1fr / repeat(2, 1fr);
     justify-content: center;
     gap: 2em 4em;
-    max-width: 1200px;
+    max-width: 56vw;
     margin: auto;
 
     @include small-screen {
@@ -65,7 +65,7 @@ $border-radius: 1.25em;
         border: solid 1px $btn-border;
         background-color: $main-background-color;
         color: $main-text-color;
-        padding: 4px 10px;
+        padding: 0.25em 0.625em;
         cursor: pointer;
         transition: transform 100ms ease;
 
@@ -101,6 +101,11 @@ $border-radius: 1.25em;
 
     &__title {
         text-align: left;
+    }
+
+    &__linkImg {
+        height: 1.875em;
+        width: 1.875em;
     }
 
     &__description {

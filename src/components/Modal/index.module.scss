@@ -30,7 +30,7 @@
         margin: 10% auto;
         padding: 1em 2em;
         width: 80%;
-        max-width: 1200px;
+        max-width: 58vw;
         animation: forwards modalApparition 400ms;
 
         @include small-screen {
@@ -40,6 +40,8 @@
 
     &__close {
         margin-bottom: 0.75em;
+        width: 1.875em;
+        height: 1.875em;
         cursor: pointer;
 
         &:hover {
