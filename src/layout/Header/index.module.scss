@@ -118,22 +118,9 @@ $background-color: #313131;
     &__link {
         // margin right to center the navbar. temporary solution??
         margin-right: 7vw;
-        width: 1.875em;
-        height: 1.875em;
         
         @media (max-width: 1100px) {
             margin-right: 0;
-        }
-
-    }
-
-    &__img {
-        transition: opacity 200ms ease-in-out;
-        height: 1.875em;
-        width: 1.875em;
-    
-        &:hover {
-            opacity: 0.75;
         }
     }
 }

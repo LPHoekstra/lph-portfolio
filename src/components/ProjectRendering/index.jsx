@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 import Modal from "../Modal"
 import { projectOverview } from "../../data/projects"
 import ToolsUsedCard from "../ToolsUsedCard"
-import github from "../../assets/icons/github.svg"
+import LinkIcon from "../LinkIcon"
 
 const maxProjectsPerPage = 4
 
@@ -103,9 +103,7 @@ function ProjectRendering({ categories }) {
                         <ToolsUsedCard tools={modalContent.tools} />
                         <div className={m.modal__titleAndLinkContainer}>
                             <h2 className={m.modal__title}>{modalContent.title}</h2>
-                            <a href={modalContent.repo} target="_blank">
-                                <img src={github} className={m.modal__linkImg} alt="Dépot github du projet" />
-                            </a>
+                            <LinkIcon type="github" hrefLink={modalContent.repo}/>
                         </div>
                         <p className={m.modal__description}>{modalContent.description}</p>
                     </div>

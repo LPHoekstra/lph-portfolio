@@ -1,7 +1,7 @@
 import m from "./index.module.scss"
-import githubIcon from '../../assets/icons/github.svg'
 import { useEffect, useState } from "react"
 import { redirection } from "../../utils/redirectionUtils"
+import LinkIcon from "../../components/LinkIcon"
 
 const headerList = [
     {
@@ -77,9 +77,7 @@ function Header() {
                 </ul>
             </nav>
             <div className={m.linkContainer}>
-                <a href="https://github.com/LPHoekstra" target="_blank" className={m.linkContainer__link}>
-                    <img src={githubIcon} alt="Github de Tom Hoekstra" className={m.linkContainer__img} />
-                </a>
+                <LinkIcon type="github" additionalClass={{link: m.linkContainer__link}}/>
                 <div className={m.openNavBarBtn} onClick={() => setNavBarIsOpen(true)}>
                     <button className={m.openNavBarBtn__srOnly}>Ouvrir barre de navigation</button>
                     <span className={m.openNavBarBtn__bar}></span>

@@ -1,0 +1,11 @@
+.link {
+    &__img {
+        height: 1.875em;
+        width: 1.875em;
+        transition: opacity 200ms ease-in-out;
+
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+}
