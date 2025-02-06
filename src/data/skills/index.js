@@ -16,7 +16,7 @@ export const iconsList = [
     {name: "JavaScript", img: js},
     {name: "React", img: react},
     {name: "Git", img: git},
-    {name: "Visual studio", img: vsc},
+    {name: "VS Code", img: vsc},
     {name: "Java", img: java},
     {name: "Spring Boot", img: springBoot},
     {name: "Figma", img: figma}

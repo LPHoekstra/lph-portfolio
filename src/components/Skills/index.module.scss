@@ -8,6 +8,10 @@
     max-width: 900px;
     grid-template: repeat(2, 1fr) / repeat(5, 1fr);
     gap: 4em;
+
+    @include small-screen {
+        gap: max(7.1vw, 2em);
+    }
 }
 
 .iconContainers {
@@ -17,12 +21,21 @@
     transition: transform 0.2s ease-in-out;
     will-change: transform;
 
+    @include small-screen {
+        min-width: 6em;
+    }
+
     &:hover {
         transform: scale(1.1) translateY(-10px);
     }
 
     &__img {
-        width: 96px;
-        height: 96px;
+        width: 6em;
+        height: 6em;
+
+        @include small-screen {
+            width: max(10.6vw, 3em);
+            height: max(10.6vw, 3em);
+        }
     }
 }
