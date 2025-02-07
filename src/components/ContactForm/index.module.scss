@@ -2,6 +2,12 @@
 @use "./../../styles/mixins.scss" as *;
 
 $error-color: rgb(255, 74, 74);
+$success-color: rgb(135, 255, 141);
+%form-send-msg {
+    text-align: center;
+    margin-top: 1em;
+    font-size: 1.125em;
+}
 
 .form {
     display: flex;
@@ -38,9 +44,12 @@ $error-color: rgb(255, 74, 74);
     }
 
     &__errorMsg {
-        text-align: center;
+        @extend %form-send-msg;
         color: $error-color;
-        margin-top: 1em;
-        font-size: 1.125em;
+    }
+
+    &__successMsg {
+        @extend %form-send-msg;
+        color: $success-color;
     }
 }
