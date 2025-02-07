@@ -8,7 +8,7 @@ import HeroBackground from "../../components/HeroBackgroundAnimation"
 function Home() {
     return (
         <main className={m.main}>
-            {/* fast presentation section */}
+            {/* hero section */}
             <section id="hero" className={m.hero}>
                 <HeroBackground />
                 <h1 className={m.hero__title}>Tom Hoekstra</h1>
