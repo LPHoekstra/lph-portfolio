@@ -1,8 +1,7 @@
-import argentbank from "./../../assets/projects/argentbank.png"
-import kasa from "./../../assets/projects/kasa.png"
+import argentbank from "./../../assets/projects/argentbank.webp"
+import kasa from "./../../assets/projects/kasa.webp"
 import springBoot from "./../../assets/projects/spring-boot.webp"
 import minecraft from "./../../assets/projects/minecraft.webp"
-// import cyclingStats from "./../../assets/projects/cycling-stats.png"
 
 export const projectOverview = [
     {
@@ -47,12 +46,3 @@ export const projectOverview = [
     },
 
 ]
-
-// {
-//     img: cyclingStats,
-//     title: "Cycling-stats",
-//     tools: ["PHP"],
-//     categorie: ["Front-end", "back-end"],
-//     repo: "https://github.com/LPHoekstra/cycling-stats-php",
-//     description: "Cycling-stats est projet personnel pour essayer php et mysql, dans l'objectif d'élargir mes compétences en back-end. L'api de Strava est utilisée pour ce connecter et récupérer les informations de l'utilisateur. to be continued..."
-// },
