@@ -25,7 +25,7 @@ const headerList = [
         content: "Me Contacter"
     },
     {
-        link: "../../assets/cv/",
+        link: "/cv/CV-Tom-Le-Pennec.pdf",
         target: "_blank",
         content: "CV"
     }
@@ -64,10 +64,7 @@ function Header() {
                         <li key={element.content} onMouseDown={(e) => e.stopPropagation()}>
                             <a href={element.link}
                                 target={element.target}
-                                className={`
-                                    ${m.navBar__link} 
-                                    ${element.link.split("#")[1] === activeSection ? m.navBar__link_selected : ""}
-                                `}
+                                className={`${m.navBar__link} ${element.link.split("#")[1] === activeSection ? m.navBar__link_selected : ""}`}
                                 onClick={redirection}
                             >
                                 {element.content}

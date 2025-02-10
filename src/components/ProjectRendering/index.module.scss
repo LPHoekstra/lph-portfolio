@@ -8,12 +8,13 @@ $border-radius: 1.25em;
     grid-template: 1fr / repeat(2, 1fr);
     justify-content: center;
     gap: 2em 4em;
-    max-width: 56vw;
+    max-width: 68.75em;
     margin: auto;
 
     @include small-screen {
         display: flex;
         flex-direction: column;
+        max-width: none;
     }
 }
 

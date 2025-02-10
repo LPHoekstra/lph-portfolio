@@ -5,12 +5,12 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    max-width: 46.8vw; // 900px
-    grid-template: repeat(2, 1fr) / repeat(5, 1fr);
+    max-width: 56.25em;
     gap: 4em;
 
     @include small-screen {
         gap: max(7.1vw, 2em);
+        max-width: none;
     }
 }
 
