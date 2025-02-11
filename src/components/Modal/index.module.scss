@@ -23,15 +23,19 @@
     top: 0;
     left: 0;
     background-color: rgba($color: (#000000), $alpha: 0.5);
+    display: flex;
+    align-items: center;
     
     &__wrapper {
         position: relative;
         background-color: $secondary-background-color;
-        margin: 10% auto;
+        margin: auto;
         padding: 1em 2em;
         width: 80%;
-        max-width: 58vw;
+        max-width: 62.5em;
         animation: forwards modalApparition 400ms;
+        max-height: 85%;
+        overflow: auto;
 
         @include small-screen {
             padding: 1em;

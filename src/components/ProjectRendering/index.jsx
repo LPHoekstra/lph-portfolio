@@ -1,13 +1,12 @@
 import m from "./index.module.scss"
-import React, { Suspense, useMemo, useState } from "react"
+import { useMemo, useState } from "react"
 import PropTypes from "prop-types"
 import { projectOverview } from "../../data/projects"
 import ToolsUsedCard from "../ToolsUsedCard"
 import LinkIcon from "../LinkIcon"
+import Modal from "../Modal"
 
 const maxProjectsPerPage = 4
-
-const LazyModal = React.lazy(() => import("../Modal"))
 
 function ProjectRendering({ categories }) {
     const [modalIsOpen, setModalIsOpen] = useState(false)
@@ -94,25 +93,23 @@ function ProjectRendering({ categories }) {
             }
             {/* if possible on open and close of the modal the component ProjectRendering should'nt rerender */}
             {modalIsOpen &&
-                <Suspense>
-                    <LazyModal
+                    <Modal
                         closeModal={closeModal}
                         wrapperClass={m.modal__wrapper}
                         content={
-                            <div>
+                            <div className={m.modal}>
                                 <img src={modalContent.img} alt={modalContent.title}
                                     className={m.modal__img}
                                 />
                                 <ToolsUsedCard tools={modalContent.tools} />
                                 <div className={m.modal__titleAndLinkContainer}>
-                                    <h2 className={m.modal__title}>{modalContent.title}</h2>
+                                    <h2>{modalContent.title}</h2>
                                     <LinkIcon type="github" hrefLink={modalContent.repo} />
                                 </div>
                                 <p className={m.modal__description}>{modalContent.description}</p>
                             </div>
                         }
                     />
-                </Suspense>
             }
         </>
     )
