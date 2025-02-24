@@ -5,7 +5,7 @@ $border-radius: 1.25em;
 
 .projectContainer {
     display: grid;
-    grid-template: 1fr / repeat(2, 1fr);
+    grid-template: repeat(2, 1fr) / repeat(2, 1fr);
     justify-content: center;
     gap: 2em 4em;
     max-width: 68.75em;

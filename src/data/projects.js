@@ -1,7 +1,7 @@
-import argentbank from "./../../assets/projects/argentbank.webp"
-import kasa from "./../../assets/projects/kasa.webp"
-import springBoot from "./../../assets/projects/spring-boot.webp"
-import minecraft from "./../../assets/projects/minecraft.webp"
+import argentbank from "./../assets/projects/argentbank.webp"
+import kasa from "./../assets/projects/kasa.webp"
+import springBoot from "./../assets/projects/spring-boot.webp"
+import minecraft from "./../assets/projects/minecraft.webp"
 
 export const projectOverview = [
     {
@@ -42,7 +42,6 @@ export const projectOverview = [
         tools: ["Java", "Fabric"],
         categorie: ["autre"],
         repo: "https://github.com/LPHoekstra/rmp-qol",
-        description: "RMP-QoL est un projet personnel visant à améliorer la qualité de vie des joueurs sur Minecraft. Conçu pour un usage personnel et destiné aux proches, ce mod est développé avec Fabric. Actuellement, il intègre une seule fonctionnalité : l’AutoForward, qui permet au joueur d’avancer automatiquement en appuyant sur une touche, sans avoir à la maintenir enfoncée. D’autres fonctionnalités sont prévues pour enrichir l’expérience de jeu."
+        description: "RMP-QoL est un projet personnel visant à améliorer la qualité de vie des joueurs sur Minecraft. Conçu pour un usage personnel et destiné aux proches, ce mod est développé avec Fabric. Actuellement, il intègre deux fonctionnalitées : l’AutoForward, qui permet au joueur d’avancer automatiquement en appuyant sur une touche, sans avoir à la maintenir enfoncée, et l'autoHarvest qui permet de récolter les plantations à maturiter en maintenant le click droit. D’autres fonctionnalités sont prévues pour améliorer l’expérience de jeu."
     },
-
 ]

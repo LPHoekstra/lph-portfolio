@@ -1,5 +1,5 @@
 import m from "./index.module.scss"
-import { iconsList } from "../../data/skills"
+import { iconsList } from "../../data/skills.js"
 
 function Skills() {
     return (
