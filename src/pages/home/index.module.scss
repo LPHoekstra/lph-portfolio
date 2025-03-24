@@ -27,6 +27,13 @@ $max-width: 68.75em;
         margin-top: 20vh;
         @include button
     }
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to bottom, transparent 60%, $secondary-background-color 130%);
+    }
 }
 
 .about {

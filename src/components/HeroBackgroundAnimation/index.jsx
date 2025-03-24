@@ -1,20 +1,47 @@
+import { useEffect } from "react";
 import m from "./index.module.scss"
 
 function HeroBackgroundAnimation() {
-    return (
-            <ul className={m.circles}>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
-    )
+    useEffect(() => {
+        const canvas = document.getElementById("canvas");
+        const ctx = canvas.getContext("2d");
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            drawDots();
+        }
+
+        function drawDots() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            const dots = [];
+            
+            for (let x = 0; x < canvas.width; x += 25) {
+                for (let y = 0; y < canvas.height; y += 25) {
+                    if (Math.random() > 0.8) {
+                        dots.push({ x, y, alpha: Math.random(), speed: Math.random() * 2 });
+                    }
+                }
+            }
+            
+            function animateDots() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                dots.forEach(dot => {
+                    dot.alpha = Math.abs(Math.sin(Date.now() / (500 + dot.speed * 200)));
+                    ctx.fillStyle = `rgba(0, 255, 204, ${dot.alpha})`;
+                    ctx.fillRect(dot.x, dot.y, 2, 2);
+                });
+                requestAnimationFrame(animateDots);
+            }
+            
+            animateDots();
+        }
+
+        window.addEventListener("resize", resizeCanvas);
+        resizeCanvas();
+    }, [])
+
+    return <canvas id="canvas" className={m.canvas}></canvas>
 }
 
 export default HeroBackgroundAnimation
