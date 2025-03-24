@@ -1,7 +1,7 @@
 import m from "./index.module.scss"
 import { useMemo, useState } from "react"
 import PropTypes from "prop-types"
-import { projectOverview } from "../../data/projects.js"
+import { projectOverview } from "../../../public/data/projects"
 import ToolsUsedCard from "../ToolsUsedCard"
 import LinkIcon from "../LinkIcon"
 import Modal from "../Modal"

@@ -1,8 +1,8 @@
-import argentbank from "./../assets/projects/argentbank.webp"
-import kasa from "./../assets/projects/kasa.webp"
-import portfolio from "./../assets/projects/portfolio.webp"
-import springBoot from "./../assets/projects/spring-boot.webp"
-import minecraft from "./../assets/projects/minecraft.webp"
+import argentbank from "../assets/projects/argentbank.webp"
+import kasa from "../assets/projects/kasa.webp"
+import portfolio from "../assets/projects/portfolio.webp"
+import springBoot from "../assets/projects/spring-boot.webp"
+import minecraft from "../assets/projects/minecraft.webp"
 
 export const projectOverview = [
     {

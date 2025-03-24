@@ -1,7 +1,7 @@
 import m from "./index.module.scss"
 import ProjectRendering from "../ProjectRendering"
 import { useState } from "react"
-import { projectOverview } from "../../data/projects.js"
+import { projectOverview } from "../../../public/data/projects"
 import { redirection } from "../../utils/redirectionUtils"
 
 const categoriesBtn = ["Tous"]
