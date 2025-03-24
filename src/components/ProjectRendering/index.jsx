@@ -20,6 +20,12 @@ function ProjectRendering({ categories }) {
 
     const openModal = (project) => {
         setModalIsOpen(true)
+        // set project description as array to add a <br> after each dot in jsx
+        if (typeof project.description === "string") {
+            const splittedDescriptionByDot = project.description.split(".")
+            splittedDescriptionByDot.pop() // remove empty string
+            project.description = splittedDescriptionByDot
+        }
         setModalContent(project)
     }
 
@@ -106,7 +112,13 @@ function ProjectRendering({ categories }) {
                                     <h2>{modalContent.title}</h2>
                                     <LinkIcon type="github" hrefLink={modalContent.repo} />
                                 </div>
-                                <p className={m.modal__description}>{modalContent.description}</p>
+                                <p className={m.modal__description}>
+                                    {modalContent.description.map(description => (
+                                        <span key={description}>
+                                            {description + "."} <br />
+                                        </span>
+                                    ))}
+                                </p>
                             </div>
                         }
                     />
