@@ -2,8 +2,6 @@
 @use "./../../styles/placeholder.scss" as *;
 @use "./../../styles/mixins.scss" as *;
 
-$background-color: #313131;
-
 @keyframes navbar-small-screen {
     from {
         transform: translateX(-30vw);
@@ -30,7 +28,7 @@ $background-color: #313131;
 
     &::after {
         @extend %pseudo-elements-absolute;
-        background-color: rgba($color: $background-color, $alpha: 0.7);
+        background-color: rgba($color: $header-background-color, $alpha: 0.7);
         z-index: -1;
     }
 }
@@ -42,8 +40,7 @@ $background-color: #313131;
 
     &_active {
         position: fixed;
-        top: 0;
-        left: 0;
+        inset: 0;
         width: 100%;
         height: 100%;
         display: block;
@@ -64,11 +61,10 @@ $background-color: #313131;
             &::after {
                 content: "";
                 position: absolute;
-                top: 0;
-                left: 0;
+                inset: 0;
                 width: 100%;
                 height: 100%;
-                background-color: $background-color;
+                background-color: $header-background-color;
             }
         }
     }

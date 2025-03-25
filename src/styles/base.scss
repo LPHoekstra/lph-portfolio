@@ -26,6 +26,10 @@ section {
     padding: 5rem 2rem;
 }
 
+h1, h2, h3 {
+    color: $title-text-color;
+}
+
 h2 {
     font-size: 2em;
 }

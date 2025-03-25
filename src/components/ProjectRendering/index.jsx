@@ -76,6 +76,7 @@ function ProjectRendering({ categories }) {
 
     return (
         <>
+            {/* Card container */}
             <div className={m.projectContainer}>
                 {visibleProjectsWithPagination.map((project) => (
                     <div key={`${project.title}-${project.tools}`}
