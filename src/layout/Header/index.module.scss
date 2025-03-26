@@ -24,6 +24,7 @@
     &__title {
         font-size: 2em;
         font-weight: 500;
+        color: $title-text-color;
     }
 
     &::after {
@@ -74,7 +75,7 @@
         padding: 1.25em 0.938em;
         font-size: 1.125em;
         text-decoration: none;
-        color: $main-text-color;
+        color: $title-text-color;
         position: relative;
         z-index: 1;
 
@@ -87,7 +88,7 @@
         &::after {
             @extend %pseudo-elements-absolute;
             opacity: 0;
-            background-color: $btn-background;
+            background-color: $third-color;
             z-index: -1;
             transition: opacity 300ms ease-in-out;
             will-change: opacity;

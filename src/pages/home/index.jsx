@@ -65,23 +65,19 @@ function Home() {
                             <li className={m.aboutUl__list}><span className={m.aboutUl__label}>Email:</span><a href="mailto:tomhoekstra27@gmail.com" className={m.aboutUl__email}>tomhoekstra27@gmail.com</a></li>
                             <li className={m.aboutUl__list}><span className={m.aboutUl__label}>Age:</span>{age()}</li>
                         </ul>
-                        <a className={m.about__cvBtn}>Voir le CV</a>
+                        <a href="/cv/CV-Tom-Le-Pennec.pdf" target="_blank" className={m.about__cvBtn}>Voir le CV</a>
                     </div>
                 </div>
             </section>
             {/* skill section */}
             <section id="skill" className={m.skill}>
-                <h2>Compétences</h2>
-                <ul className={m.skill__list}>
-                    <li>Frontend : Création d’interfaces utilisateur performantes et intuitives, avec une attention particulière à l’optimisation des performances et à un code propre et lisible.</li>
-                    <li>Backend : Conception d’API et gestion de bases de données, avec l’ambition d’approfondir ces compétences pour devenir un développeur full-stack.</li>
-                    <li>Bonnes pratiques : Maîtrise des outils modernes, souci de la qualité du code, et recherche constante d’améliorations techniques.</li>
-                </ul>
+                <h2 className={m.skill__title}>Compétences</h2>
+
                 <Skills />
             </section>
             {/* project section */}
             <section id="project" className={m.project}>
-                <h2>Projets</h2>
+                <h2 className={m.project__title}>Projets</h2>
                 <Projects />
             </section>
             <section id="contact" className={m.contact}>
