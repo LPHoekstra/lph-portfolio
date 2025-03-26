@@ -39,48 +39,86 @@ $max-width: 68.75em;
     }
 }
 
+// about section
 .about {
     background-color: $secondary-background-color;
+
+    &__title {
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: -1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 0.25rem;
+            width: 4rem;
+            background-color: $third-color;
+        }
+    }
 
     &__wrapper {
         display: flex;
         align-items: center;
         justify-content: center;
         max-width: $max-width;
-        margin: 2em auto;
+        margin: 5em auto;
     }
-    
-    &__content {
+
+    &__cvBtn {
+        @include button;
+        margin-top: 3em;
+        display: inline-block;
+        transform: translateX(50%);
+    }
+}
+
+.aboutUl {
+    list-style-type: none;
+    padding: 0;
+    color: $title-text-color;
+
+    &__list {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        border-bottom: solid 1px rgba($main-text-color, 0.3);
+    }
+
+    &__label {
+        font-weight: 600;
+        margin-right: 0.5rem;
+    }
+
+    &__email {
+        color: $third-color;
+        transition: ease 200ms opacity;
+
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+}
+
+.aboutDescriptionContainer {
+    &__title {
+        font-size: 1.5em;
+
+        span {
+            color: $third-color;
+        }
+    }
+
+    &__textContainer {
         padding-right: 2em;
 
         p {
             margin-top: 1em;
         }
     }
-
-    &__ulList {
-        list-style-type: none;
-        padding: 0;
-        color: $title-text-color;
-
-        li {
-            padding-top: 0.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: solid 1px rgba($main-text-color, 0.3);
-
-            & > span {
-                font-weight: 600;
-                margin-right: 0.5rem;
-            }
-        }
-    }
-
-    &__cvBtn {
-        @include button;
-        margin: 3em auto 0 auto;
-    }
 }
 
+// skills section
 .skill {
     &__list {
         margin: 2em auto;

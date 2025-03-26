@@ -37,32 +37,35 @@ function Home() {
             </section>
             {/* About me section */}
             <section id="about" className={m.about}>
-                <h2>A propos</h2>
+                <h2 className={m.about__title}>A propos</h2>
                 <div className={m.about__wrapper}>
-                    <div className={m.about__content}>
-                        <p>
-                            Passionné par le développement web, je combine curiosité, rigueur et une capacité d’adaptation qui me permet de répondre efficacement aux besoins des projets.
-                            Convaincu que la communication est essentielle pour réussir, je suis toujours à l’écoute afin d’assurer des solutions sur mesure.
-                        </p>
-                        <p>
-                            Après avoir débuté mon apprentissage en autodidacte en décembre 2023, j’ai entrepris une formation d’intégrateur web chez OpenClassRooms pour renforcer mes compétences techniques et acquérir une expérience concrète.
-                            Ce parcours m’a permis de développer des compétences solide en frontend.
-                        </p>
-                        <p>
+                    <article className={m.aboutDescriptionContainer}>
+                        <h3 className={m.aboutDescriptionContainer__title}><span>Tom Hoekstra,</span> développeur web</h3>
+                        <div className={m.aboutDescriptionContainer__textContainer}>
+                            <p>
+                                Passionné par le développement web, je combine curiosité, rigueur et une capacité d’adaptation qui me permet de répondre efficacement aux besoins des projets.
+                                Convaincu que la communication est essentielle pour réussir, je suis toujours à l’écoute afin d’assurer des solutions sur mesure.
+                            </p>
+                            <p>
+                                Après avoir débuté mon apprentissage en autodidacte en décembre 2023, j’ai entrepris une formation d’intégrateur web chez OpenClassRooms pour renforcer mes compétences techniques et acquérir une expérience concrète.
+                                Ce parcours m’a permis de développer des compétences solide en frontend.
+                            </p>
+                            <p>
 
-                            Mon objectif est de continuer à progresser dans un environnement dynamique et collaboratif. Je suis à la recherche d’une entreprise qui me permettra de monter en compétences tout en contribuant activement à ses projets.
-                        </p>
-                        <p>
-                            Je serais ravi d’échanger avec vous pour en savoir plus sur vos besoins et vos ambitions !
-                        </p>
-                    </div>
+                                Mon objectif est de continuer à progresser dans un environnement dynamique et collaboratif. Je suis à la recherche d’une entreprise qui me permettra de monter en compétences tout en contribuant activement à ses projets.
+                            </p>
+                            <p>
+                                Je serais ravi d’échanger avec vous pour en savoir plus sur vos besoins et vos ambitions !
+                            </p>
+                        </div>
+                    </article>
                     <div>
-                        <ul className={m.about__ulList}>
-                            <li><span>Nom:</span>Tom Hoekstra</li>
-                            <li><span>Email:</span>tomhoekstra27@gmail.com</li>
-                            <li><span>Age:</span>{age()}</li>
+                        <ul className={m.aboutUl}>
+                            <li className={m.aboutUl__list}><span className={m.aboutUl__label}>Nom:</span>Tom Hoekstra</li>
+                            <li className={m.aboutUl__list}><span className={m.aboutUl__label}>Email:</span><a href="mailto:tomhoekstra27@gmail.com" className={m.aboutUl__email}>tomhoekstra27@gmail.com</a></li>
+                            <li className={m.aboutUl__list}><span className={m.aboutUl__label}>Age:</span>{age()}</li>
                         </ul>
-                        <button className={m.about__cvBtn}>Voir le CV</button>
+                        <a className={m.about__cvBtn}>Voir le CV</a>
                     </div>
                 </div>
             </section>
