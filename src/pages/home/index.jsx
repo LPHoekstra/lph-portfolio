@@ -72,7 +72,6 @@ function Home() {
             {/* skill section */}
             <section id="skill" className={m.skill}>
                 <h2 className={m.skill__title}>Compétences</h2>
-
                 <Skills />
             </section>
             {/* project section */}
