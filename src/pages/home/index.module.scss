@@ -52,7 +52,12 @@ $max-width: 68.75em;
         align-items: center;
         justify-content: center;
         max-width: $max-width;
-        margin: 5em auto;
+        margin: 5em auto 0 auto;
+
+        @include small-screen {
+            flex-direction: column;
+            gap: 2em;
+        }
     }
 
     &__cvBtn {

@@ -9,7 +9,7 @@ function Footer() {
                 <LinkIcon type="github" />
             </div>
             <p>2025 Tom Hoekstra</p>
-            <span>version 1.0.2</span>
+            <span>version 1.1.0</span>
         </footer>
     )
 }
