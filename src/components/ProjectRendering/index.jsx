@@ -97,37 +97,11 @@ function ProjectRendering({ categories }) {
                     {paginationBtn}
                 </div>
             }
-            {/* If possible on open and close of the modal the component ProjectRendering should'nt rerender.
-                Create a component for the content modal */}
+            {/* If possible on open and close of the modal the component ProjectRendering should'nt rerender. */}
             {modalIsOpen &&
                 <Modal
                     closeModal={closeModal}
-                    wrapperClass={m.modal__wrapper}
-                    content={
-                        <div className={m.modal}>
-                            <h2>{modalContent.title}</h2>
-                            <div className={m.modal__imgAndContentWrapper}>
-                                <img src={modalContent.img} alt={modalContent.title}
-                                    className={m.modal__img}
-                                />
-                                <article className={m.modal__contentWrapper}>
-                                    <h3 className={m.modal__secondTitle}>Info du projet:</h3>
-                                    <p className={m.modal__description}>
-                                        {modalContent.description.map(description => (
-                                            <span key={description}>
-                                                {description + "."} <br />
-                                            </span>
-                                        ))}
-                                    </p>
-                                    <h3 className={m.modal__secondTitle}>Details du projet:</h3>
-                                    <ul className={m.modal__detailsList}>
-                                        <li>Technologies: <ToolsUsedCard tools={modalContent.tools} /></li>
-                                        <li>Github: <a href={modalContent.repo} target="_blank" rel="noopener noreferrer" className={m.modal__githubLink}>{modalContent.repo}</a></li>
-                                    </ul>
-                                </article>
-                            </div>
-                        </div>
-                    }
+                    modalContent={modalContent}
                 />
             }
         </>

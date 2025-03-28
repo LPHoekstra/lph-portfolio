@@ -15,7 +15,7 @@
     }
 }
 
-.modal {
+.modalAside {
     height: 100%;
     width: 100%;
     z-index: 2000;
@@ -49,6 +49,57 @@
 
         &:hover {
             opacity: 0.75;
+        }
+    }
+}
+
+.imgAndContentWrapper {
+    display: flex;
+    margin-top: 1rem;
+    
+    &__img {
+        max-width: 60%;
+        height: 25em;
+        object-fit: cover;
+        margin-bottom: 1em;
+        
+        @include small-screen {
+            height: max(44.5vw, 18.75em);
+        }
+    }
+}
+
+.contentWrapper {
+    padding-left: 0.75rem;
+    
+    &__title {
+        margin-bottom: 0.5rem;
+    }
+    
+    &__description {
+        font-size: 1em;
+        margin-bottom: 0.5rem;
+    }
+}
+
+.detailsList {
+    list-style-type: none;
+    padding: 0;
+    
+    &__items {
+        display: flex;
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+        border-bottom: solid 1px rgba($color: $main-text-color, $alpha: 0.3);
+    }
+
+    &__githubLink {
+        padding-left: 0.5rem;
+        color: $third-color;
+        transition: opacity 200ms ease-in;
+        
+        &:hover {
+            opacity: 0.7;
         }
     }
 }
