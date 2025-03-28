@@ -1,8 +1,9 @@
+@use "./variables.scss" as *;
+
 %pseudo-elements-absolute {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
+    inset: 0;
     height: 100%;
     width: 100%;
 }
@@ -15,4 +16,20 @@
     margin: -1px;
     overflow: hidden;
     clip: rect(0, 0, 0, 0);
+}
+
+%home-title {
+    position: relative;
+    padding-bottom: 0.75rem;
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 0.188rem;
+        width: 6rem;
+        background-color: $third-color;
+    }
 }

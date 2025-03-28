@@ -3,7 +3,6 @@ import { useMemo, useState } from "react"
 import PropTypes from "prop-types"
 import { projectOverview } from "../../../public/data/projects"
 import ToolsUsedCard from "../ToolsUsedCard"
-import LinkIcon from "../LinkIcon"
 import Modal from "../Modal"
 
 const maxProjectsPerPage = 4
@@ -76,6 +75,7 @@ function ProjectRendering({ categories }) {
 
     return (
         <>
+            {/* Card container */}
             <div className={m.projectContainer}>
                 {visibleProjectsWithPagination.map((project) => (
                     <div key={`${project.title}-${project.tools}`}
@@ -97,31 +97,38 @@ function ProjectRendering({ categories }) {
                     {paginationBtn}
                 </div>
             }
-            {/* if possible on open and close of the modal the component ProjectRendering should'nt rerender */}
+            {/* If possible on open and close of the modal the component ProjectRendering should'nt rerender.
+                Create a component for the content modal */}
             {modalIsOpen &&
-                    <Modal
-                        closeModal={closeModal}
-                        wrapperClass={m.modal__wrapper}
-                        content={
-                            <div className={m.modal}>
+                <Modal
+                    closeModal={closeModal}
+                    wrapperClass={m.modal__wrapper}
+                    content={
+                        <div className={m.modal}>
+                            <h2>{modalContent.title}</h2>
+                            <div className={m.modal__imgAndContentWrapper}>
                                 <img src={modalContent.img} alt={modalContent.title}
                                     className={m.modal__img}
                                 />
-                                <ToolsUsedCard tools={modalContent.tools} />
-                                <div className={m.modal__titleAndLinkContainer}>
-                                    <h2>{modalContent.title}</h2>
-                                    <LinkIcon type="github" hrefLink={modalContent.repo} />
-                                </div>
-                                <p className={m.modal__description}>
-                                    {modalContent.description.map(description => (
-                                        <span key={description}>
-                                            {description + "."} <br />
-                                        </span>
-                                    ))}
-                                </p>
+                                <article className={m.modal__contentWrapper}>
+                                    <h3 className={m.modal__secondTitle}>Info du projet:</h3>
+                                    <p className={m.modal__description}>
+                                        {modalContent.description.map(description => (
+                                            <span key={description}>
+                                                {description + "."} <br />
+                                            </span>
+                                        ))}
+                                    </p>
+                                    <h3 className={m.modal__secondTitle}>Details du projet:</h3>
+                                    <ul className={m.modal__detailsList}>
+                                        <li>Technologies: <ToolsUsedCard tools={modalContent.tools} /></li>
+                                        <li>Github: <a href={modalContent.repo} target="_blank" rel="noopener noreferrer" className={m.modal__githubLink}>{modalContent.repo}</a></li>
+                                    </ul>
+                                </article>
                             </div>
-                        }
-                    />
+                        </div>
+                    }
+                />
             }
         </>
     )

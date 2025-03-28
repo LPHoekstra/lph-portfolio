@@ -23,17 +23,19 @@ function Projects() {
 
     return (
         <div>
-            <div className={m.btnContainer}>
+            <ul className={m.btnContainer}>
                 {categoriesBtn.map((btn) => (
-                    <button key={btn}
-                        className={`${m.btnContainer__btn} ${categorie === btn && m.btnContainer__btn_selected}`}
-                        onClick={() => changeCategorie(btn)}
-                        aria-label={`Affiche les projets ${btn}`}
-                    >
-                        {btn}
-                    </button>
+                    <li key={btn}>
+                        <button
+                            className={`${m.btnContainer__btn} ${categorie === btn && m.btnContainer__btn_selected}`}
+                            onClick={() => changeCategorie(btn)}
+                            aria-label={`Affiche les projets ${btn}`}
+                        >
+                            {btn}
+                        </button>
+                    </li>
                 ))}
-            </div>
+            </ul>
             <ProjectRendering categories={categorie} />
         </div>
     )

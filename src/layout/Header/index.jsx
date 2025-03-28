@@ -57,7 +57,7 @@ function Header() {
 
     return (
         <header className={m.header}>
-            <span className={m.header__title}>LPHoekstra</span>
+            <a href="/" className={m.header__title}>LPHoekstra</a>
             <nav className={`${m.navBar} ${navBarIsOpen ? m.navBar_active : ""}`} onMouseDown={() => setNavBarIsOpen(false)}>
                 <ul className={m.navBar__list} onMouseDown={(e) => e.stopPropagation()}>
                     {headerList.map((element) => (
@@ -74,7 +74,7 @@ function Header() {
                 </ul>
             </nav>
             <div className={m.linkContainer}>
-                <LinkIcon type="github" additionalClass={{link: m.linkContainer__link}}/>
+                <LinkIcon type="github" additionalClass={{ link: m.linkContainer__link }} />
                 <div className={m.openNavBarBtn} onClick={() => setNavBarIsOpen(true)}>
                     <button className={m.openNavBarBtn__srOnly}>Ouvrir barre de navigation</button>
                     <span className={m.openNavBarBtn__bar}></span>
