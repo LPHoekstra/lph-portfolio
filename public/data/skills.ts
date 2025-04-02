@@ -8,16 +8,23 @@ import vsc from "../assets/icons/vsc.svg"
 import java from "../assets/icons/java.svg"
 import springBoot from "../assets/icons/spring-boot.svg"
 import figma from "../assets/icons/figma.svg"
+import ts from "../assets/icons/ts.svg"
 
-export const iconsList = [
-    {name: "HTML", img: html},
-    {name: "CSS", img: css},
-    {name: "SASS", img: sass},
-    {name: "JavaScript", img: js},
-    {name: "React", img: react},
-    {name: "Git", img: git},
-    {name: "VS Code", img: vsc},
-    {name: "Java", img: java},
-    {name: "Spring Boot", img: springBoot},
-    {name: "Figma", img: figma}
+interface iconsList {
+    name: string
+    img: string
+}
+
+export const iconsList: Array<iconsList> = [
+    { name: "HTML", img: html },
+    { name: "CSS", img: css },
+    { name: "SASS", img: sass },
+    { name: "JavaScript", img: js },
+    { name: "TypeScript", img: ts },
+    { name: "React", img: react },
+    { name: "Git", img: git },
+    { name: "VS Code", img: vsc },
+    { name: "Java", img: java },
+    { name: "Spring Boot", img: springBoot },
+    { name: "Figma", img: figma }
 ]
