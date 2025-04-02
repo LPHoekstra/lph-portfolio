@@ -1,35 +1,47 @@
 import m from "./index.module.scss"
-import { useMemo, useState } from "react"
-import PropTypes from "prop-types"
+import { ReactElement, useMemo, useState } from "react"
 import { projectOverview } from "../../../public/data/projects"
 import ToolsUsedCard from "../ToolsUsedCard"
 import Modal from "../Modal"
+import { ModalContent } from "../../types/ModalTypes"
+import { Project } from "../../types/projectTypes"
 
-const maxProjectsPerPage = 4
+interface ProjectRenderingProps {
+    categories: string
+}
 
-function ProjectRendering({ categories }) {
-    const [modalIsOpen, setModalIsOpen] = useState(false)
-    const [modalContent, setModalContent] = useState(null)
-    const [paginationBtn, setPaginationBtn] = useState(null)
-    const [currentPage, setCurrentPage] = useState(1)
+const maxProjectsPerPage: number = 4
 
-    const closeModal = () => {
+function ProjectRendering({ categories }: ProjectRenderingProps) {
+    const [modalIsOpen, setModalIsOpen] = useState<Boolean>(false)
+    const [modalContent, setModalContent] = useState<ModalContent | null>(null)
+    const [paginationBtn, setPaginationBtn] = useState<Array<ReactElement<HTMLButtonElement>> | null>(null)
+    const [currentPage, setCurrentPage] = useState<number>(1)
+
+    const closeModal = (): void => {
         setModalIsOpen(false)
     }
 
-    const openModal = (project) => {
-        setModalIsOpen(true)
+    const openModal = (project: Project): void => {
         // set project description as array to add a <br> after each dot in jsx
-        if (typeof project.description === "string") {
-            const splittedDescriptionByDot = project.description.split(".")
-            splittedDescriptionByDot.pop() // remove empty string
-            project.description = splittedDescriptionByDot
+        const splittedDescriptionByDot = project.description.split(".")
+        splittedDescriptionByDot.pop() // remove empty string
+
+        const projectContent: ModalContent = {
+            img: project.img,
+            title: project.title,
+            tools: project.tools,
+            categorie: project.categorie,
+            repo: project.repo,
+            description: splittedDescriptionByDot
         }
-        setModalContent(project)
+
+        setModalIsOpen(true)
+        setModalContent(projectContent)
     }
 
     // filter the projects according to the categories
-    const projectFilteredByCategorie = useMemo(() => {
+    const projectFilteredByCategorie: Array<Project> = useMemo(() => {
         let FilteringProjects = projectOverview
         setCurrentPage(1)
         if (categories !== "Tous") {
@@ -42,33 +54,33 @@ function ProjectRendering({ categories }) {
     }, [categories])
 
     // handle the pagination
-    const visibleProjectsWithPagination = useMemo(() => {
-        const paginationButton = []
-        const numberOfPages = Math.ceil((projectFilteredByCategorie.length + 1) / maxProjectsPerPage)
+    const visibleProjectsWithPagination: Array<Project> = useMemo(() => {
+        const paginationButtonArray: Array<ReactElement<HTMLButtonElement>> = []
+        const numberOfPages: number = Math.ceil((projectFilteredByCategorie.length + 1) / maxProjectsPerPage)
 
-        const startIndex = (currentPage - 1) * maxProjectsPerPage
-        const endIndex = startIndex + maxProjectsPerPage
-        const visibleProjects = projectFilteredByCategorie.slice(startIndex, endIndex)
+        const startIndex: number = (currentPage - 1) * maxProjectsPerPage
+        const endIndex: number = startIndex + maxProjectsPerPage
+        const visibleProjects: Array<Project> = projectFilteredByCategorie.slice(startIndex, endIndex)
 
         // create the pagination button
         for (let i = 1; i <= numberOfPages; i++) {
-            const button =
+            const button: ReactElement<HTMLButtonElement> =
                 <button
                     key={`button-${i}`}
                     className={`${m.paginationContainer__btn} ${currentPage == i && m.paginationContainer__btn_selected}`}
                     aria-label={`Page ${i}`}
                     onClick={() => {
                         setCurrentPage(i)
-                        const projectSection = document.getElementById("project")
-                        projectSection.scrollIntoView({ behavior: "smooth", block: "start" })
+                        // const projectSection = document.getElementById("project")
+                        // projectSection.scrollIntoView({ behavior: "smooth", block: "start" })
                     }}
                 >
                     {i}
                 </button>
 
-            paginationButton.push(button)
+            paginationButtonArray.push(button)
         }
-        paginationButton.length > 1 ? setPaginationBtn(paginationButton) : setPaginationBtn(null)
+        paginationButtonArray.length > 1 ? setPaginationBtn(paginationButtonArray) : setPaginationBtn(null)
 
         return visibleProjects
     }, [currentPage, projectFilteredByCategorie])
@@ -98,7 +110,7 @@ function ProjectRendering({ categories }) {
                 </div>
             }
             {/* If possible on open and close of the modal the component ProjectRendering should'nt rerender. */}
-            {modalIsOpen &&
+            {modalIsOpen && modalContent != null &&
                 <Modal
                     closeModal={closeModal}
                     modalContent={modalContent}
@@ -108,8 +120,5 @@ function ProjectRendering({ categories }) {
     )
 }
 
-ProjectRendering.propTypes = {
-    categories: PropTypes.string.isRequired
-}
 
 export default ProjectRendering

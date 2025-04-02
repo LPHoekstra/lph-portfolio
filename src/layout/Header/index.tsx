@@ -32,8 +32,8 @@ const headerList = [
 ]
 
 function Header() {
-    const [activeSection, setActiveSection] = useState(null)
-    const [navBarIsOpen, setNavBarIsOpen] = useState(false)
+    const [activeSection, setActiveSection] = useState<String>("")
+    const [navBarIsOpen, setNavBarIsOpen] = useState<Boolean>(false)
 
     // to get the current section on the screen
     useEffect(() => {

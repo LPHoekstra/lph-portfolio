@@ -1,4 +1,4 @@
-function SkillsCard() {
+function SkillsCard({ content }) {
     return (
         <article> </article>
     )

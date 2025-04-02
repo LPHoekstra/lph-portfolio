@@ -1,7 +1,11 @@
 import PropTypes from "prop-types";
 import m from "./index.module.scss"
 
-function ToolsUsedCard({ tools }) {
+interface ToolsProps {
+    tools: Array<String>
+}
+
+function ToolsUsedCard({ tools }: ToolsProps) {
     return (
         <div className={m.toolsContainer}>
             {tools.map((tool, index) => (

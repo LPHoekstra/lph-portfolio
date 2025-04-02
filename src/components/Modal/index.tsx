@@ -3,10 +3,16 @@ import PropTypes from "prop-types"
 import close from "../../assets/icons/close.svg"
 import { useCallback, useEffect } from "react"
 import ToolsUsedCard from "../ToolsUsedCard"
+import { ModalContent } from "../../types/ModalTypes"
+
+interface ModalProps {
+    closeModal: () => void
+    modalContent: ModalContent
+}
 
 // add a trap focus to the modal
-function Modal({ closeModal, modalContent }) {
-    const handleEscape = useCallback((e) => {
+function Modal({ closeModal, modalContent }: ModalProps) {
+    const handleEscape = useCallback((e: KeyboardEvent) => {
         if (e.key === "Escape") {
             closeModal()
         }

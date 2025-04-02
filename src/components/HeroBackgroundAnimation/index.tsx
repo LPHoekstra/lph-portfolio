@@ -1,13 +1,29 @@
 import { useEffect } from "react";
 import m from "./index.module.scss"
 
+interface DotsElement {
+    x: number
+    y: number
+    alpha: number
+    speed: number
+}
+
 function HeroBackgroundAnimation() {
     useEffect(() => {
-        const canvas = document.getElementById("canvas");
-        const ctx = canvas.getContext("2d");
+        const isCanvasElement = document.getElementById("canvas");
+        if (!isCanvasElement) {
+            throw new Error("Canvas element not find")
+        }
+        const canvas = isCanvasElement as HTMLCanvasElement
 
-        let dots = [];
-        let animationFrameId;
+        const isCtxElement = canvas.getContext("2d");
+        if (!isCtxElement) {
+            throw new Error("Canvas element not find")
+        }
+        const ctx = isCtxElement as CanvasRenderingContext2D
+
+        let dots: Array<DotsElement> = [];
+        let animationFrameId: number | null = null;
 
         function resizeCanvas() {
             canvas.width = window.innerWidth;
@@ -26,7 +42,7 @@ function HeroBackgroundAnimation() {
             }
         }
 
-        function animateDots(timestamp) {
+        function animateDots(timestamp: number) {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
             dots.forEach(dot => {
