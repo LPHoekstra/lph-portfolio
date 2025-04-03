@@ -4,9 +4,10 @@ import Skills from "../../components/Skills"
 import m from "./index.module.scss"
 import { redirection } from "../../utils/redirectionUtils"
 import HeroBackground from "../../components/HeroBackgroundAnimation"
+import { useMemo } from "react"
 
 function Home() {
-    const age = () => {
+    const age: number = useMemo(() => {
         const startDate = new Date("2002-06-20");
         const actualDate = new Date();
 
@@ -20,7 +21,7 @@ function Home() {
         }
 
         return yearsDif;
-    }
+    }, [])
 
     return (
         <main className={m.main}>
@@ -63,7 +64,7 @@ function Home() {
                         <ul className={m.aboutUl}>
                             <li className={m.aboutUl__list}><span className={m.aboutUl__label}>Nom:</span>Tom Hoekstra</li>
                             <li className={m.aboutUl__list}><span className={m.aboutUl__label}>Email:</span><a href="mailto:tomhoekstra27@gmail.com" className={m.aboutUl__email}>tomhoekstra27@gmail.com</a></li>
-                            <li className={m.aboutUl__list}><span className={m.aboutUl__label}>Age:</span>{age()}</li>
+                            <li className={m.aboutUl__list}><span className={m.aboutUl__label}>Age:</span>{age}</li>
                         </ul>
                         <a href="/cv/CV-Tom-Le-Pennec.pdf" target="_blank" className={m.about__cvBtn}>Voir le CV</a>
                     </div>

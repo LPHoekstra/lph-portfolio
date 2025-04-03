@@ -1,0 +1,15 @@
+@use "../../styles/variables.scss" as *;
+
+.mainWrapper {
+    display: flex;
+    gap: 1em;
+    align-items: center;
+
+    &__img {
+        width: 3.5rem;
+        height: 3.5rem;
+        background-color: $secondary-background-color;
+        border-radius: 0.75rem;
+        padding: 0.5rem;
+    }
+}
