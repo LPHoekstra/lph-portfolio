@@ -120,5 +120,4 @@ function ProjectRendering({ categories }: ProjectRenderingProps) {
     )
 }
 
-
 export default ProjectRendering

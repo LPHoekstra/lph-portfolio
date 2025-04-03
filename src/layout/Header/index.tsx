@@ -31,6 +31,7 @@ const headerList = [
     }
 ]
 
+// probleme of selection on which section we are on mobile
 function Header() {
     const [activeSection, setActiveSection] = useState<String>("")
     const [navBarIsOpen, setNavBarIsOpen] = useState<Boolean>(false)

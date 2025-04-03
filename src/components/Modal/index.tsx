@@ -1,5 +1,4 @@
 import m from "./index.module.scss"
-import PropTypes from "prop-types"
 import close from "../../assets/icons/close.svg"
 import { useCallback, useEffect } from "react"
 import ToolsUsedCard from "../ToolsUsedCard"
@@ -61,8 +60,3 @@ function Modal({ closeModal, modalContent }: ModalProps) {
 }
 
 export default Modal
-
-Modal.propTypes = {
-    closeModal: PropTypes.func.isRequired,
-    modalContent: PropTypes.object.isRequired,
-}

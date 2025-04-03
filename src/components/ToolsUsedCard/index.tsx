@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import m from "./index.module.scss"
 
 interface ToolsProps {
@@ -13,10 +12,6 @@ function ToolsUsedCard({ tools }: ToolsProps) {
             ))}
         </div>
     )
-}
-
-ToolsUsedCard.propTypes = {
-    tools: PropTypes.array.isRequired
 }
 
 export default ToolsUsedCard;
