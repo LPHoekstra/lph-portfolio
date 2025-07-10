@@ -10,8 +10,8 @@
     &__tools {
         padding: 0 1em;
         border-radius: 1em;
-        color: rgb(46, 46, 46);
-        background-color: #a0a0a0;
+        color: var(--secondary-text-color);
+        background-color: var(--btn-border);
         text-align: left;
         text-wrap: nowrap;
     }

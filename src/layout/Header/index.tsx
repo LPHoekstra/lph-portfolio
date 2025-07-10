@@ -2,6 +2,9 @@ import m from "./index.module.scss"
 import { useEffect, useState } from "react"
 import { redirection } from "../../utils/redirectionUtils"
 import LinkIcon from "../../components/LinkIcon"
+import { useTheme } from "../../hooks/theme"
+import sunIcon from "../../assets/icons/sun.svg"
+import moonIcon from "../../assets/icons/moon.png"
 
 const headerList = [
     {
@@ -33,6 +36,7 @@ const headerList = [
 
 // probleme of selection on which section we are on mobile
 function Header() {
+    const { theme, setTheme } = useTheme()
     const [activeSection, setActiveSection] = useState<String>("")
     const [navBarIsOpen, setNavBarIsOpen] = useState<Boolean>(false)
 
@@ -56,6 +60,11 @@ function Header() {
         })
     }, [])
 
+    const changeTheme = () => {
+        const newTheme = theme === "dark" ? "light" : "dark"
+        setTheme(newTheme)
+    }
+
     return (
         <header className={m.header}>
             <a href="/" className={m.header__title}>LPHoekstra</a>
@@ -75,6 +84,13 @@ function Header() {
                 </ul>
             </nav>
             <div className={m.linkContainer}>
+                {/* add an icon that change with the theme */}
+                <img
+                    src={theme === "dark" ? sunIcon : moonIcon}
+                    alt="Change visual theme"
+                    className={m.linkContainer__themeIcon}
+                    onClick={changeTheme}
+                />
                 <LinkIcon type="github" additionalClass={{ link: m.linkContainer__link }} />
                 <div className={m.openNavBarBtn} onClick={() => setNavBarIsOpen(true)}>
                     <button className={m.openNavBarBtn__srOnly}>Ouvrir barre de navigation</button>

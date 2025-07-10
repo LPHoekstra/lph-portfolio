@@ -1,14 +1,15 @@
 @use "./variables.scss" as *;
 @use "./mixins.scss" as *;
+@use "./theme.scss" as *;
 
 * {
     margin: 0;
 }
 
-html {
+body {
     font-family: "Poppins", sans-serif;
-    background-color: $main-background-color;
-    color: $main-text-color;
+    background-color: var(--main-background-color);
+    color: var(--main-text-color);
 
     @include wide-screen {
         font-size: 0.93vw; // 18px in vw
@@ -27,7 +28,7 @@ section {
 }
 
 h1, h2, h3 {
-    color: $title-text-color;
+    color: var(--title-text-color);
 }
 
 h2 {
@@ -36,5 +37,5 @@ h2 {
 
 a {
     text-decoration: none;
-    color: $main-text-color;
+    color: var(--main-text-color);
 }
