@@ -1,4 +1,5 @@
 import React, { createContext, ReactNode, useState } from "react"
+import { theme } from "../../types/AvailableTheme"
 
 interface ThemeProviderProps {
     children: ReactNode
@@ -8,8 +9,6 @@ interface ThemeContextType {
     theme: theme
     setTheme: React.Dispatch<React.SetStateAction<theme>>
 }
-
-export type theme = "dark" | "light"
 
 export const ThemeContext = createContext<ThemeContextType>({
     theme: "dark",

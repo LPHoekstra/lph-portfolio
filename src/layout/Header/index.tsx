@@ -3,6 +3,8 @@ import { useEffect, useState } from "react"
 import { redirection } from "../../utils/redirectionUtils"
 import LinkIcon from "../../components/LinkIcon"
 import { useTheme } from "../../hooks/theme"
+import sunIcon from "../../assets/icons/sun.svg"
+import moonIcon from "../../assets/icons/moon.png"
 
 const headerList = [
     {
@@ -83,7 +85,12 @@ function Header() {
             </nav>
             <div className={m.linkContainer}>
                 {/* add an icon that change with the theme */}
-                <button onClick={changeTheme}>theme</button>
+                <img
+                    src={theme === "dark" ? sunIcon : moonIcon}
+                    alt="Change visual theme"
+                    className={m.linkContainer__themeIcon}
+                    onClick={changeTheme}
+                />
                 <LinkIcon type="github" additionalClass={{ link: m.linkContainer__link }} />
                 <div className={m.openNavBarBtn} onClick={() => setNavBarIsOpen(true)}>
                     <button className={m.openNavBarBtn__srOnly}>Ouvrir barre de navigation</button>

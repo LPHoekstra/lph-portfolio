@@ -20,18 +20,18 @@ $btn-border-radius: 3.125em;
     position: relative;
     display: block;
     border-radius: $btn-border-radius;
-    background-color: var(--main-background-color);
+    background-color: var(--third-color);
     color: var(--title-text-color);
     font-weight: 500;
     font-size: 1em;
     padding: 1em 2em;
-    border: solid 0.063em var(--btn-border);
+    border: none;
     z-index: 1;
     @content;
 
     &:hover {
         &::after {
-            opacity: 1;
+            opacity: 0.2;
         }
     }
 
@@ -39,7 +39,7 @@ $btn-border-radius: 3.125em;
         @extend %pseudo-elements-absolute;
         opacity: 0;
         border-radius: $btn-border-radius;
-        background-color: var(--third-color);
+        background-color: var(--header-background-color);
         z-index: -1;
         transition: opacity 200ms ease;
         will-change: opacity;

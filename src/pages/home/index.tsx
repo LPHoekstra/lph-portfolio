@@ -29,7 +29,7 @@ function Home() {
             <section id="hero" className={m.hero}>
                 <HeroBackground />
                 <h1 className={m.hero__title}>Tom Hoekstra</h1>
-                <p>
+                <p className={m.hero__subtitle}>
                     Développeur Web | Frontend
                 </p>
                 <a href="#project" onClick={redirection} className={m.hero__btn}>

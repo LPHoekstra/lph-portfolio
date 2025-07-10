@@ -1,21 +1,24 @@
-// dark theme (default)
 :root {
+    --hero-background-color: #212529;
+    --hero-boxshadow-color: #343a40;
+    --header-background-color: #171a1d;
+    --third-color: #41bb66;
+    --secondary-text-color: #fff;
+}
+
+// dark theme (default)
+.dark-theme {
     --main-background-color: #212529;
     --secondary-background-color: #343a40;
-    --third-color: #41bb66; // temporary
-    --header-background-color: #171a1d;
     --title-text-color: #fff;
     --main-text-color: rgba(255, 255, 255, 0.7);
     --btn-border: #a3a3a3;
 }
 
-
 // light theme
 .light-theme {
     --main-background-color: #f8f9fa;
     --secondary-background-color: #e9ecef;
-    --third-color: #41bb66; // temporary
-    --header-background-color: #ffffff;
     --title-text-color: #212529;
     --main-text-color: rgba(33,37,41,0.85);
     --btn-border: #6c757d;
