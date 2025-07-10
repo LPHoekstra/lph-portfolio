@@ -35,13 +35,13 @@ $max-width: 68.75em;
         content: "";
         position: absolute;
         inset: 0;
-        background: linear-gradient(to bottom, transparent 60%, $secondary-background-color 120%);
+        background: linear-gradient(to bottom, transparent 60%, var(--secondary-background-color) 120%);
     }
 }
 
 // about section
 .about {
-    background-color: $secondary-background-color;
+    background-color: var(--secondary-background-color);
 
     &__title {
         @extend %home-title;
@@ -71,12 +71,12 @@ $max-width: 68.75em;
 .aboutUl {
     list-style-type: none;
     padding: 0;
-    color: $title-text-color;
+    color: var(--title-text-color);
 
     &__list {
         padding-top: 0.5rem;
         padding-bottom: 0.5rem;
-        border-bottom: solid 1px rgba($main-text-color, 0.3);
+        border-bottom: solid 1px var(--main-text-color);
     }
 
     &__label {
@@ -85,7 +85,7 @@ $max-width: 68.75em;
     }
 
     &__email {
-        color: $third-color;
+        color: var(--third-color);
         transition: ease 200ms opacity;
 
         &:hover {
@@ -99,7 +99,7 @@ $max-width: 68.75em;
         font-size: 1.5em;
 
         span {
-            color: $third-color;
+            color: var(--third-color);
         }
     }
 
@@ -121,7 +121,7 @@ $max-width: 68.75em;
 
 // project section
 .project {
-    background-color: $secondary-background-color;
+    background-color: var(--secondary-background-color);
 
     &__title {
         @extend %home-title;

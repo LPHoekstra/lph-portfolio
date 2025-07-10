@@ -21,7 +21,7 @@ $border-radius: 1.25em;
 // card project
 .project {
     cursor: pointer;
-    background-color: $main-background-color;
+    background-color: var(--main-background-color);
     padding: 1em;
     display: flex;
     flex-direction: column;
@@ -65,20 +65,20 @@ $border-radius: 1.25em;
     &__btn {
         font-size: 1.125em;
         border-radius: 100%;
-        border: solid 1px $btn-border;
-        background-color: $main-background-color;
-        color: $main-text-color;
+        border: solid 1px var(--btn-border);
+        background-color: var(--main-background-color);
+        color: var(--main-text-color);
         padding: 0.25em 0.625em;
         cursor: pointer;
         transition: transform 100ms ease;
 
         &_selected {
-            border-color: $main-text-color;
+            border-color: var(--main-text-color);
             transform: scale(1.1);
         }
 
         &:hover {
-            border-color: $main-text-color;
+            border-color: var(--main-text-color);
             transform: scale(1.1);
         }
     }
